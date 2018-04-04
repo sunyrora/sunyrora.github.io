@@ -279,7 +279,7 @@ After you verify an email address, your GitHub Pages sites will build automatica
 </pre></td><td class="code"><pre>git config <span class="nt">--global</span> user.name <span class="o">[</span>사용자이름]
 git config <span class="nt">--global</span> user.email <span class="o">[</span>이메일 주소]</pre></td></tr></tbody></table></code></pre></figure>
 
-<p>이렇게 수정하고 바로 push 시도를 하면 변경된 것이 없어서 push를 하지 않는다. 그래서 그냥 아무거나 하나 수정하고 다시 커밋 후 푸시 했다.</p>
+<p>이렇게 수정하고 바로 push 시도를 하면 소스에 변경된 것이 없어서 업데이트하지 않는다. 그래서 그냥 아무거나 하나 수정하고 다시 커밋 후 푸시 했다.</p>
 
 <p>그렇게 이젠 잘 될 거라 믿었는데,,,, 2차 문제 발생.
 이젠 아예 안 뜨는게 아니라 뜨다 만다. 정확히는 아래 이미지처럼 메뉴는 뜨고 글 리스트가 보이지 않는다.</p>
@@ -293,7 +293,7 @@ git config <span class="nt">--global</span> user.email <span class="o">[</span>�
 그리고 이번엔 메인의 리스트와 같은 코드를 사용하는 태그 페이지를 주소창에 입력했더니 태그 리스트는 제대로 나온다.<br />
 아 뭔가 조금씩 실마리가 보이는 것 같다..<br />
 메인 페이지는 카테코리 레이아웃을 사용하는데, 카테고리 별로 페이지네이션을 하기 위해 jekyll-paginate-v2 를 사용했다.<br />
-깃허브 페이지는 jekyll-paginate v1을 지원하고 v2는 지원하지 않는다.</p>
+깃허브 페이지는 jekyll-paginate v1을 지원하고, v2는 지원하지 않는다.</p>
 
 <h2 id="github-pages-에서-jekyll-plugin-사용">GitHub pages 에서 Jekyll plugin 사용</h2>
 
@@ -329,7 +329,7 @@ repository의 이름을 <strong>[user name].github.io</strong> 로 하면 자동
 <p>이 걸 몰라서 지킬 플러그인 적용 방법을 검색하며 엄청 햇갈렸었다.<br />
 난 이미 repository를 내 깃허브 아이디를 사용하여 sunyrora.github.io 로 생성해 놓고 작업을 한 상태였는데,
 master말고 다른 브랜치를 호스트로 설정하라는 말을 보며, ‘난 마스터 밖에 설정 못하는데??’ 하면서 이해를 할래야 할 수가 없었던 거지. 
-어찌어찌 두 종류의 페이지가 있다는 것을 알았고, 나처럼 첫 번째 종류의 페이지로 생성을 한 경우 _site 빌드 파일을 어떻게 올리느냐가 남았다.</p>
+어찌어찌 두 종류의 페이지가 있다는 것을 알았고, 이젠 나처럼 첫 번째 종류의 페이지로 생성을 한 경우 _site 빌드 파일을 어떻게 올리느냐가 남았다.</p>
 
 <p>어떤 사람은 repository를 두 개를 만들어서 하나는 소스관리용으로, 하나는 페이지 호스트용으로 쓴다는데,<br />
 그러면 관리가 좀 번거로워 질 것 같고, 나는 맘에 안든다.<br />
@@ -346,9 +346,141 @@ master말고 다른 브랜치를 호스트로 설정하라는 말을 보며, ‘
 이걸 이해하기 위해 그 많은 삽질을 해야 했을 뿐이지.<br />
 아마도 누가 이렇게 딱 세 줄로 적어 놓은 걸 봤다해도 처음엔 이해하지 못했겠지?</p>
 
-<p>여기서 또 한가지 필요한 작업은 _site의 결과물을 remote master에 어떻게 올릴 것이냐이다.</p>
+<h3 id="자-그럼-_site의-결과물을-remote-master에-어떻게-올릴-것인가">자 그럼 _site의 결과물을 remote master에 어떻게 올릴 것인가.</h3>
 
-<p>– 수정중 –</p>
+<p>위에 링크한 블로그에서 설명한 방법은 _site 폴더에 따로 git init 으로 repository를 생성하여 remote master에 연결해 push 하는 방법이다. 그리고 소스는 별도의 브랜치로 관리한다.<br />
+처음엔 그 방법 그대로 적용해 보았다. 아주 잘 작동되고, remote ropository도 한 프로젝트로 관리할 수 있으니 괜찮은 방법이다.<br />
+그런데 한 가지 문제점은 로컬에는 git repository가 두 개로 분리 되어 있는 상홍이기 때문에 두 개의 프로젝트를 관리하는 것과 큰 차이점이 없다는 것이었다. 커밋을 각각의 폴더에서 따로 매 번 해줘야 하는 것이다.<br />
+쓸만하지만 역시 맘에 드는 방법은 아니다.</p>
+
+<p>이번엔 원리를 이해했으니 로컬에서도 한 개의 repository로 브랜치를 사용하여 소스관리와 빌드 파일 배포를 한 번에 할 수 있는 방법을 생각해볼 수 있었다.</p>
+
+<p>git 명령어 중 소스의 특정 폴더를 프로젝트의 root로 만들 수 있는 명령이 있다는 것을 찾을 수 있었다.
+바로 <strong>filter-branch</strong> 다. 이 명령어의 <strong>–subdirectory-filter</strong> 옵션을 사용하면 지정한 브랜치의 서브폴더가 루트로 변경된다.</p>
+
+<p>사실 이 명령어에 대해 검색하고, git <a href="https://git-scm.com/book/ko/v1/Git-%EB%8F%84%EA%B5%AC-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%8B%A8%EC%9E%A5%ED%95%98%EA%B8%B0">한글 설명</a>(페이지의 거의 마지막)과 <a href="https://git-scm.com/docs/git-filter-branch">영어 설명</a>을 봐도 그 많은 것들을 다 이해할 수는 없었다. 😰</p>
+
+<p>이 <a href="https://manishearth.github.io/blog/2017/03/05/understanding-git-filter-branch/">블로그</a>를 발견했는데, 아직 다 읽지도, 이해하지도 않았지만 잘 정리되어 있는 것 같다.
+어쨌든 현재 필요한 기능은 이것 저것 테스트 해보면 어찌 작동하는지 알게 됐다. (작업하던 소스 히스토리가 하나도 남지 않게 됐다….)</p>
+
+<p>그럼 과정을 하나 하나 정리해 보자.<br />
+결과적으로 하는 일은 위에 언급한 세 가지로 같으니 하는 방법은 여러가지가 있겠지만, 내가 한 과정은 이렇다.</p>
+
+<ol>
+  <li>
+    <p>로컬에 소스관리를 할 branch를 하나 만들고 checkout. (master 브랜치에서 작업하던 중인 것으로 가정)
+ 위의 링크에는 source 라는 브랜치를 만들었는데, 난 gh-pages로 했다. 처음 깃허브 설명서를 보며 만든 브랜치라 그냥 두기로 했다.</p>
+  </li>
+  <li>
+    <p>생성한 branch를 remote에 push.(깃허브 repository가 remote로 추가 되지 않았다면 먼저 추가)
+ 깃허브에 현재 push 한 branch가 생성된다.</p>
+  </li>
+  <li>
+    <p>깃허브의 프로젝트 세팅의 branches 메뉴에 들어가서 default branch를 방금 생성된 branch로 변경
+(이제 master branch를 삭제할 수 있다. - 빌드된 _site 의 내용을 올려야 하기 때문에 기존 있는 내용은 삭제해야 한다.)</p>
+  </li>
+  <li>
+    <p>그리고 로컬과 remote의 master branch 모두 삭제. (로컬에선 방금 생성한 branch 에 checkout 한 상태여야 한다.)</p>
+  </li>
+  <li>
+    <p>이젠 로컬과 remote에 새로 생성한 branch(나의 경우 gh-pages)만 남아있는 상태이다.</p>
+  </li>
+  <li>로컬 gh-pages 에서 지킬 빌드.
+    <ul>
+      <li>이미 빌드가 된 상태로 _site의 모든 내용도 커밋이 된 상태라면 넘어가도 된다.</li>
+      <li>빌드하여 새로 생성된 파일들을 커밋한다.
+ (커밋할 때 .gitignore 에 _site가 추가되어 있으면 안된다.)</li>
+    </ul>
+  </li>
+  <li>
+    <p>로컬에서 master branch를 새로 생성하고 checkout.</p>
+  </li>
+  <li>
+    <p>이제 여기서 filter-branch로 빌드된 _site 폴더를 루트로 만든다.</p>
+  </li>
+  <li>
+    <p>master branch의 내용은 빌드된 _site 폴더의 내용이 되고, gh-pagse에는 모든 소스가 남아있다.</p>
+  </li>
+  <li>remote 에 push all 하면 끝이다.</li>
+</ol>
+
+<p>장황하게 길게 써진 것 같은데, 모르는 상태에서는 설명이 없이 이해하기 힘들었기 때문에 각 과정을 이해한 대로 정리해 보았다.<br />
+언제나 그렇듯 알고나면 별거 없는..</p>
+
+<p>그럼 이제 긴 설명만 할 것이 아니라 실제 작업을 보자.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="c"># local branch 생성 후 체크아웃</span>
+git checkout <span class="nt">-b</span> gh-pages
+
+<span class="c"># push to remote</span>
+git push origin gh-pages</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>그 다음 github site에서 default branch 변경한 후</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="c"># remote master branch 삭제</span>
+git push origin :master
+
+<span class="c"># 로컬 master branch 삭제</span>
+git branch <span class="nt">-D</span> master</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>로컬에서 jekyll 빌드 후 커밋</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="c"># 로컬 master branch 생성 후 체크아웃</span>
+git checkout <span class="nt">-b</span> master
+
+<span class="c"># _site 폴더를 루트로 만들기</span>
+git filter-branch <span class="nt">--subdirectory-filter</span> <span class="nt">-f</span> _site @
+
+<span class="c"># remote push all</span>
+git push all</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>아 한 가지 빠트린 부분은 .nojekyll을 _site 폴더에 함께 빌드하기 위해 _config.yml 에</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">include</span><span class="pi">:</span> 
+  <span class="pi">-</span> <span class="s">.nojekyll</span>
+</code></pre></div></div>
+
+<p>이렇게 추가해 주었다.(이 방법이 맞는건진 모르겠다.)</p>
+
+<p>이제 깃허브 페이지 주소로 가서 확인해 보니</p>
+
+<p><a href="/assets/images/main_normal.png"><img src="/assets/images/main_normal.png" alt="sunyrora blog" width="300px" title="click to view" class="center-img" /></a></p>
+
+<p>정상적으로 잘 동작한다.</p>
+
+<h3 id="주의사항">주의사항</h3>
+
+<p>이 방법으로 하면 하나의 커밋으로 소스관리와 빌드 관리를 할 수 있는 장점이 있다.<br />
+그러나 소스 변경할 땐 반드시 gh-pages(혹은 생성한 branch 명) branch로 checkout 상태여야 하고,
+매번 빌드한 후 remote에 적용할 때마다 로컬의 마스터 삭제와 서브디렉토리 필터 과정을 거쳐야 하는 단점이 있다.
+그러나 이건 명령어를 쉘로 만들어 두면 귀찮은 과정이 조금은 줄어 들겠지.</p>
+
+<h2 id="마치며">마치며</h2>
+
+<p>쉽게 생각하고 시작한게 은근 고생할 줄이야..<br />
+이 글 하나 작성하는데도 적지 않은 시간이 걸렸다.<br />
+작성하는 중간에도 수정 사항이 보여서 수정하고, 문제 해결도 하고, 한 번 더 확인하고…<br />
+그래도 아직도 추가해야할 것도 손봐야 할 것도 많다.ㅜㅜ</p>
+
+<p>원래 목적을 잃지 않게 균형 잘 잡아야겠다………</p>
 
 
       </div>
