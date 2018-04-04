@@ -236,7 +236,8 @@ git branch -D master
 git checkout -b master
 
 # _site 폴더를 루트로 만들기
-git filter-branch --subdirectory-filter -f _site @
+# @ 또는 HEAD는 현재 브렌치의 HEAD를 의미
+git filter-branch --subdirectory-filter _site -f @
 
 # remote push all
 git push all

@@ -443,11 +443,13 @@ git branch <span class="nt">-D</span> master</pre></td></tr></tbody></table></co
 6
 7
 8
+9
 </pre></td><td class="code"><pre><span class="c"># 로컬 master branch 생성 후 체크아웃</span>
 git checkout <span class="nt">-b</span> master
 
 <span class="c"># _site 폴더를 루트로 만들기</span>
-git filter-branch <span class="nt">--subdirectory-filter</span> <span class="nt">-f</span> _site @
+<span class="c"># @ 또는 HEAD는 현재 브렌치의 HEAD를 의미</span>
+git filter-branch <span class="nt">--subdirectory-filter</span> _site <span class="nt">-f</span> @
 
 <span class="c"># remote push all</span>
 git push all</pre></td></tr></tbody></table></code></pre></figure>
