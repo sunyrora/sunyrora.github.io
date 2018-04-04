@@ -1,0 +1,69 @@
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin text-size-adjust($value) {
+  -webkit-text-size-adjust: $value;
+  -moz-text-size-adjust: $value;
+  -ms-text-size-adjust: $value;
+  text-size-adjust: $value;
+}
+
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+@mixin transition-property($value) {
+  -webkit-transition-property: $value;
+-moz-transition-property: $value;
+-o-transition-property: $value;
+transition-property: $value;
+}
+
+@mixin transition-with-transform($value) {
+  -webkit-transition: -webkit-transform $value;
+  -o-transition: -o-transform $value;
+  transition: transform $value;
+}
+
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
+}
+
+@mixin transform-origin($value) {
+  -webkit-transform-origin: $value;
+  -ms-transform-origin: $value;
+  transform-origin: $value;
+}
+
+@mixin border-radius($value) {
+  -webkit-border-radius: $value;
+  border-radius: $value;
+}
+
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+  box-shadow: $value;
+}
+
+@mixin background-size($value) {
+  -webkit-background-size: $value;
+  background-size: $value;
+}
+
+ @mixin user-select($value) {
+  -webkit-user-select: $value;
+  -moz-user-select: $value;
+  -ms-user-select: $value;
+  user-select: $value;
+ }
+
+ @mixin sticky {
+  position: -webkit-sticky;
+  position: sticky;
+ }

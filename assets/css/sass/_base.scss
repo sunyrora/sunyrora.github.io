@@ -1,0 +1,76 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  @include flexbox;
+  @include flex_direction(column);
+  font-family: $font_sans;
+  font-size: $default-font-size + px;
+  @include font-smoothing;
+  @include text-size-adjust(100%);
+  text-rendering:optimizelegibility;
+  color: $body-color;
+  background-color: $bg-color;
+  margin: 0;
+  
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  color: $title-color;
+  // letter-spacing: -.020rem;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+::-moz-selection {
+  background: rgba(38, 57, 89, 0.8);
+  color: $white;
+}
+
+::selection {
+  background: rgba(38, 57, 89, 0.8);
+  color: $white;
+}
+
+
+a {
+  font-family: $font-serif;
+  display: inline-block;
+  text-decoration: none;
+  color: $dark-blue;
+  @include transition(all .3s cubic-bezier(0.13, 0.43, 0.54, 1.82));
+
+  &.no-anim, &.no-scale {
+    display: inline;
+  }
+
+  &:hover:not(.no-anim) {
+      color: $hover-color;
+      @include transform(scale(1.3));
+  }
+}
+
+.selected {
+  color: $hover-color;
+}
+
+.disabled {
+  color: $dark-gray;
+}
+
+.clearfix::after {
+  clear: both;
+}.clearfix::before, .clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}

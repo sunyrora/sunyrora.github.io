@@ -1,0 +1,120 @@
+
+// .category-title {
+//   border-bottom: solid 1px $dark;
+//   @include flexbox;
+//   @include flex-direction(row);
+//   @include align-items(center);
+//   width: 100%;
+//   @include align-self(flex-start);
+//   background-color: $lightgray;
+// }
+
+.post-list {
+  clear: both;
+  list-style: none;
+  width: 100%;
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(flex-start);
+
+  padding: 0;
+  
+  .post-item {
+    @include flexbox;
+    @include flex-direction(column);
+    width: 100%;
+    padding: 0.7rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 1.5rem;
+    min-height: 4rem;
+    background-color: #fff;
+    overflow: hidden;
+  
+    @include border-radius(10px);
+    @include transition(all .3s ease);
+    @include box-shadow(0 1px 1px 0 rgba(31, 35, 46, .15));
+    
+    &:hover {
+      transform: translate(0px, -2px);
+      @include box-shadow(0 15px 45px -10px rgba(10, 16, 34, .2));
+    }
+  
+    .post-item-wrapper {
+      @include flexbox;
+      @include align-items(center);
+    }
+
+    .post-item-content {
+      @include flexbox;
+      @include flex-direction(column);
+      @include flex-grow(2);
+      width: 100%;
+
+      & > * {
+        padding: 5px;
+      }
+
+      .post-content-text {
+        & > * {
+          padding-bottom: 5px;
+        }
+      }
+
+      .post-item-title {
+        @include flexbox;
+        @include align-items(center);
+
+        margin-bottom: 10px;
+      }
+
+      .post-title {
+        margin: 0;
+      }
+
+      .post-date
+      {
+        align-self: flex-end;
+        font-size: 0.75em;
+        margin-left: 10px;
+      }
+
+      .post-content-img {
+        @include flex-grow(1);
+      }
+
+      .post-thumbnail {
+        width: 100px;
+        max-width: 100%;
+      }
+    }
+
+    .item-list-tag {
+      @include flexbox;
+      @include flex-direction(row);
+
+      & > * {
+        margin-right: 2px;
+      }
+    }
+  }
+}
+
+.post-content {
+  // border: solid 1px royalblue;
+  color: $dark;
+  margin: 0;
+}
+
+.pagination {
+  padding: 5px;
+  letter-spacing: .5em;
+
+  a {
+    font-family: $font-serif;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}

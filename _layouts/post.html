@@ -1,0 +1,62 @@
+---
+layout: main
+---
+
+<article class="article-page">
+  <div class="page-content">
+    <div class="wrap-content">
+      <!-- print cotegory list on the top -->
+      <div class="post-header sticky-header">
+        <div>
+          Category: &nbsp;&nbsp;
+          {% capture cats %}
+          {% for category in page.category %}
+            <a class="page-category no-scale" href="{{'/categories/' | append: category | downcase | prepend: site.baseurl | replace: '//', '/' }}">{{ category }}</a>||
+          {% endfor %}
+          {% endcapture %}
+
+          <!-- 마지막 빈 배열 제외 하고 출력 -->
+          {% assign categories = cats | split: "||" %}
+          {%for category in categories %}
+            {% if forloop.first %}
+              {{ category }}
+              {% continue %}
+            {% elsif forloop.last %}
+              {% break %}
+            {% endif %}
+            , {{ category }}
+          {% endfor %}
+        </div>
+      </div>
+      <!-- end category list -->
+      
+      <header class="header-page">
+        <h1 class="page-title">{{page.title}}</h1>
+        <div class="page-date"><span>{{page.date | date: '%Y, %b %d %H:%M'}}</span></div>
+      </header>
+
+      <div class="content-body">
+        {% if page.img %}
+          <div class="page-cover-image">
+            <img class="page-image" src="{{ page.img | prepend: "/" | prepend: site.image_url | prepend: site.baseurl | replace: "//", "/" }}">
+          </div> <!-- End Page Cover Image -->
+        {% endif %}
+        {{page.content | markdownify}}
+      </div>
+
+        <div class="page-footer">
+          <div class="page-tag">
+          {% for tag in page.tags %}
+            <a class="gray-box no-anim tag" href="/tags#{{ tag | prepend: site.baseurl | replace: "//", "/>"}}">&#35; {{ tag }}</a>
+          {% endfor %}
+        </div>
+      </div>
+
+      {% include pagination_in_post.html %}
+      {% include disqus.html %}
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+
+</article> <!-- End Article Page -->
+

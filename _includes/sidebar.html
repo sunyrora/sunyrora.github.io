@@ -1,0 +1,27 @@
+<aside class="sidebar" id="nav-profil">
+  <header>
+    <div class="profil">
+      <a href="{{site.baseurl}}/">
+              <img class="profil-img" src="{{site.baseurl | append: site.image_url | append: "/" | append: site.user_photo | replace: "//", "/" }}" alt="{{site.user_name}}" />
+      </a>
+      <div><span class="user-name">{{site.user_name}}</span></div>
+      <p>{{site.profil}}</p>
+    </div>
+    {% include menu.html %}
+  </header>
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        {% if site.github_username %}
+        <li>
+          <a href="http://github.com/{{site.github_username}}" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a>
+        </li>
+        {% endif %}
+      </ul>
+    </section>
+    <div class="copyright">
+      <p>{{site.time | date: '%Y'}} &copy; {{site.user_name}}</p>
+    </div>
+  </footer>
+</aside>

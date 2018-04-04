@@ -1,0 +1,19 @@
+---
+layout: post_list
+---
+
+<div class="category-title sticky-header">
+  <span class="category_name">
+    Category - 
+    {% if page.category %}
+      {{page.category}}
+      {% assign post_count =  site.categories[page.category] | size %}
+    {% else %}
+      All
+      {% assign post_count =  site.posts | size %}
+    {% endif %}
+  </span>
+  <span class="post-count">{{post_count}} article(s)</span>
+</div>
+
+{{content}}

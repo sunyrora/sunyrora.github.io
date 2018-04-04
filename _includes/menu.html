@@ -1,0 +1,35 @@
+<nav class="nav-categories">
+  <ul>
+    <li>
+      {% if page.category == nil %}
+        {% assign class_name = "selected" %}
+      {% endif %}
+      <spans>
+        <a  {% if class_name %}class="{{class_name}}"{% endif %} href="{{site.baseurl | append: '/' | replace: '//', '/'}}">All</a>
+        ({{ site.posts | size }})
+      </span>
+    </li>
+
+    {% capture cats %}
+      {% for cat in site.categories %}
+        {{ cat[0] }}
+      {% endfor %}
+    {% endcapture %}
+
+    {% assign sortedcats = cats | split:' ' | sort %}
+    {% for category in sortedcats %}
+      {% assign post_count = site.categories[category] | size %}
+      {% assign page_name = category | downcase %}
+      {% if page.category contains category %}
+        {% assign class_name = "selected" %}
+      {% else %}
+        {% assign class_name = "" %}
+      {% endif %}
+      <li>
+        <span id="{{ category | slugify }}">
+          <a {% if class_name != "" %}class="{{class_name}}"{% endif %} href="{{'/categories/' | append: page_name | prepend: site.baseurl | replace: '//', '/' }}">{{ category }}</a>
+          ({{ post_count }})
+        </span></li>
+    {% endfor %}
+  </ul>
+</nav>

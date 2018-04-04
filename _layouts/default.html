@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  {% if site.analytics %}
+    {% include analytics.html %}
+  {% endif %}
+  <head>
+    {% include head.html %}
+  </head>
+<body>
+  <div class="wrapper">
+    {{ content }}
+  </div>
+</body>
+
+<script src="{{ site.asset_url }}/js/index.js"></script>
+</html>

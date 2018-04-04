@@ -1,0 +1,11 @@
+---
+layout: main
+---
+
+{{content}}
+<ul class="post-list">
+    {% for post in paginator.posts %}
+    {% include post_item_template.html %}
+    {% endfor %}
+</ul>
+{% include pagination.html %}

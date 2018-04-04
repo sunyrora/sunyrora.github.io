@@ -1,0 +1,67 @@
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+
+{% assign meta_title = page.title | default: site.title %}
+{% assign meta_author = page.author | default: site.author %}
+{% assign meta_description = page.descripton || default: site.description }
+{% assign meta_url = site.url | append: site.baseurl | append: page.url | replace: "//", "/" %}
+{% assign meta_img = page.image | default: site.user_photo %}
+{% unless meta_image contains "://" %}
+  {% assign meta_img = meta_img | prepend: site.baseurl | prepend: site.url %}
+{% endunless %}
+
+{% if page.layout == "post" %}
+  {% assign meta_type = "article" %}
+{% else %}
+  {% assign meta_type = "website" %}
+{% endif %}
+
+<title>
+  {% if meta_title != site.title %}
+    {{ meta_title | append: " - " | append: site.title }}
+  {% else %}
+    {{ meta_title }}
+  {% endif %}
+</title>
+
+<meta name="title" content="{{ meta_title }}" property="og:site_name" />
+<meta name="author" content="{{ meta_author }}" property="og:title" />
+<meta name="description" content="{{meta_description}}" property="og:description" />
+<meta content="{{meta_type}}" property="og:type" />
+<meta content="{{meta_url}}" property="og:url" />
+<meta content="{{meta_img}}" property="og:image" />
+{% if page.date %}
+  <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+{% endif %}
+
+{% if page.categories %}
+  {% for category in page.categories limit:1 %}
+    <meta content="{{ category }}" property="article:section">
+  {% endfor %}
+{% endif %}
+
+{% if page.tags %}
+  {% for tag in page.tags %}
+    <meta content="{{ tag }}" property="article:tag">
+  {% endfor %}
+{% endif %} 
+
+<link rel="shortcut icon" href="{{ site.image_url | append: "/favicon/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
+<link rel="apple-touch-icon" href="{{ site.image_url | append: "/favicon/apple-touch-icon.png" | prepend: site.baseurl }}">
+<link rel="apple-touch-icon" sizes="72x72" href="{{site.image_url | append:  "/favicon/apple-touch-icon-72x72.png" | prepend: site.baseurl }}">
+<link rel="apple-touch-icon" sizes="114x114" href="{{site.image_url | append:  "/favicon/apple-touch-icon-114x114.png" | prepend: site.baseurl }}">
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#263959">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#263959">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+
+
+<link href="https://fonts.googleapis.com/css?family=Lato:300i,400,700|Nanum+Gothic:400,700|Nanum+Myeongjo:400,700|PT+Serif:400,700" rel="stylesheet">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
+<!-- Styles -->
+<link rel="stylesheet" href="{{ site.css_url | append: "/main.css" | prepend: site.baseurl | replace: "//", "/" }}">

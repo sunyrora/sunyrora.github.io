@@ -1,0 +1,19 @@
+
+{% assign tag = include.tag %}
+
+<div class="tag-title sticky-header">
+  <em><b>
+  {% if tag %}
+    {{tag}}
+    {% assign post_count =  site.tags[tag] | size %}
+  {% endif %}
+  </b></em>
+  
+  &nbsp;&nbsp;&nbsp;<small>{{post_count}} article(s)</small>
+</div>
+
+<ul class="post-list">
+  {% for post in site.tags[tag] %}
+  {% include post_item_template.html %}
+  {% endfor %}
+</ul>

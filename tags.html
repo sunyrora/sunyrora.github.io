@@ -1,0 +1,36 @@
+---
+layout: main
+permalink: /tags/
+title: Tags
+---
+
+<h1 class="tag-page-title">Tags</h1>
+
+<ul class="tag-box">
+{% for tag in site.tags %}
+  <span style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 50  }}%">
+  {% assign tagname = tag | first %}
+    <a href="#{{ tagname }}">
+      {{ tagname }}({{ tag | last | size }})
+    </a> &nbsp;&nbsp;
+  </span>
+{% endfor %}
+</ul>
+
+<div id="tag-list">
+  {% for tag in site.tags %}
+    {% assign tagname = tag | first %}
+    <div class="tag-title sticky-header" id="{{ tagname }}">
+      <span class="tag-name">Tag - {{ tagname }}</span>
+      {% assign post_count = site.tags[tagname] | size %}
+      <span class="post-count">{{post_count}} article(s)</span>
+    </div>
+
+    <ul class="post-list">
+      {% for post in site.tags[tagname] %}
+      {% include post_item_template.html %}
+      {% endfor %}
+    </ul>
+
+  {% endfor %}
+</div>
