@@ -1082,6 +1082,9 @@ footer {
     color: #263959;
     text-align: center; }
 
+.tag-list {
+  margin-bottom: 500px; }
+
 .tag-page-title {
   margin: 0; }
 
