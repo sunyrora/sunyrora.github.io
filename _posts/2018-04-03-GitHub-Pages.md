@@ -240,7 +240,7 @@ git checkout -b master
 git filter-branch --subdirectory-filter _site -f @
 
 # remote push all
-git push all
+git push --all
 {% endhighlight %}
 
 
