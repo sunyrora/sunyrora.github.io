@@ -44,8 +44,8 @@ layout: main
         {{page.content | markdownify}}
       </div>
 
-        <div class="page-footer">
-          <div class="page-tag">
+      <div class="page-footer">
+        <div class="page-tag">
           {% for tag in page.tags %}
             <a class="gray-box no-anim tag" href="/tags#{{ tag | prepend: site.baseurl | replace: "//", "/>"}}">&#35; {{ tag }}</a>
           {% endfor %}
