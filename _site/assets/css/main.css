@@ -1082,6 +1082,9 @@ footer {
     color: #263959;
     text-align: center; }
 
+.comment-area {
+  width: 100%; }
+
 .tag-list {
   margin-bottom: 500px; }
 
