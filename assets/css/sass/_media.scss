@@ -1,0 +1,60 @@
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+  .content-box {
+    padding: 10px;
+    padding-top: 30px;
+  }
+
+  .wrap-content {
+    padding: 2px;
+  }
+
+  .content-body {
+    width: 98%;
+    padding: 5px;
+  }
+
+  .topbar {
+    margin-left: 2px;
+    padding-top: $tobbar-padding-s;
+    padding-bottom: $tobbar-padding-s;
+    
+    .sidebar-toggle {
+      font-size: 1.4em;
+      cursor: pointer;    
+    }
+  
+    .topmenu {
+      padding-left: 0.5em;
+      font-size: 1.25em;
+    }
+  }
+
+  .sticky-header {
+    top: convert-unit(1.5, em, px) + $tobbar-padding-s + 5px;
+  }
+
+  .sidebar {
+    left: -($sidebar-width-s);
+    width: $sidebar-width-s;
+  }
+
+  #sidebar-checkbox:checked ~ .sidebar {
+    z-index: 10;
+    visibility: visible;
+    @include transform(translateX($sidebar-width-s));
+  }
+  
+  #sidebar-checkbox:checked ~ .content-box {
+    padding-left: $sidebar-width-s + 10px;
+  }
+  
+  #sidebar-checkbox:checked ~ .topbar {
+    @include transform(translateX($sidebar-width-s));
+  }
+
+  .btn-arrow {
+    width: 1.4em;
+    font-size: 1.5em;
+  }
+}

@@ -16,7 +16,7 @@
   }
 
   function checkScroll() {
-    if(window.scrollY <= 300 ) {
+    if(window.scrollY <= 100 ) {
       btnTop.style.visibility = "hidden";
     } else {
       btnTop.style.visibility = "visible";
