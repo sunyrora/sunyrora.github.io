@@ -12,5 +12,4 @@ _drafts
 
 .sass-cache/
 
-serve.sh
-git_filter.sh
+shell/
