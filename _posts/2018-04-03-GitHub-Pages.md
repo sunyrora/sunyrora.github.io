@@ -232,7 +232,7 @@ git branch -D master
 
 로컬에서 jekyll 빌드 후 커밋
 
-{% highlight bash linenos %}
+```bash
 # 로컬 master branch 생성 후 체크아웃
 git checkout -b master
 
@@ -242,7 +242,7 @@ git filter-branch --subdirectory-filter _site -f @
 
 # remote push all
 git push --all
-{% endhighlight %}
+```
 
 
 아 한 가지 빠트린 부분은 .nojekyll을 _site 폴더에 함께 빌드하기 위해 _config.yml 에 

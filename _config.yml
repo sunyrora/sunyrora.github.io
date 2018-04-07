@@ -53,6 +53,8 @@ kramdown:
   hard_wrap:     false
   footnote_nr:   1
   show_warnings: false
+  syntax_highlighter_opts:
+    line_numbers: true
 
 plugins:
   - jekyll-sitemap

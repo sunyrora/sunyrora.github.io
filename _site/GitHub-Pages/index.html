@@ -435,7 +435,7 @@ git branch <span class="nt">-D</span> master</pre></td></tr></tbody></table></co
 
 <p>로컬에서 jekyll 빌드 후 커밋</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -444,7 +444,7 @@ git branch <span class="nt">-D</span> master</pre></td></tr></tbody></table></co
 7
 8
 9
-</pre></td><td class="code"><pre><span class="c"># 로컬 master branch 생성 후 체크아웃</span>
+</pre></td><td class="rouge-code"><pre><span class="c"># 로컬 master branch 생성 후 체크아웃</span>
 git checkout <span class="nt">-b</span> master
 
 <span class="c"># _site 폴더를 루트로 만들기</span>
@@ -452,13 +452,16 @@ git checkout <span class="nt">-b</span> master
 git filter-branch <span class="nt">--subdirectory-filter</span> _site <span class="nt">-f</span> @
 
 <span class="c"># remote push all</span>
-git push <span class="nt">--all</span></pre></td></tr></tbody></table></code></pre></figure>
+git push <span class="nt">--all</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>아 한 가지 빠트린 부분은 .nojekyll을 _site 폴더에 함께 빌드하기 위해 _config.yml 에</p>
 
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">include</span><span class="pi">:</span> 
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="na">include</span><span class="pi">:</span> 
   <span class="pi">-</span> <span class="s">.nojekyll</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>이렇게 추가해 주었다.(이 방법이 맞는건진 모르겠다.)</p>
 
