@@ -1488,6 +1488,9 @@ blockquote {
 .css .nt + .nt {
   color: #999; }
 
+.highlight {
+  overflow-x: auto; }
+
 .highlight table td.gutter {
   width: 10px;
   padding: 0 .5em 0 .5em;
@@ -1495,7 +1498,14 @@ blockquote {
   margin: 0; }
 
 .highlight pre {
-  margin: .3em auto .3em auto; }
+  margin: 0;
+  padding: 0; }
+  .highlight pre .lineno {
+    color: #bdc1c4; }
+
+.rouge-gutter pre {
+  padding-left: .5em;
+  padding-right: .5em; }
 
 .center {
   text-align: center; }
