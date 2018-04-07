@@ -53,7 +53,8 @@
         // text-overflow: ellipsis;
         line-height: 2em;
         a {
-          color: $title_color;
+          // color: $title_color;
+          font-family: $font-serif;
         }
       }
       .post-date {
@@ -96,14 +97,7 @@
     }
 
     .item-list-tag {
-      @include flexbox;
-      @include flex-direction(row);
-      margin-bottom: .4em;
-      padding-left: .6em;
-
-      & > * {
-        margin-right: 3px;
-      }
+      text-align: left;
     }
   }
 }
@@ -112,12 +106,12 @@
   padding: 5px;
   letter-spacing: .5em;
 
-  a {
-    font-family: $font-serif;
-    &:hover {
-      font-weight: bold;
-    }
-  }
+  // .page-num {
+  //   font-family: $font-serif;
+  //   &:hover {
+  //     font-weight: bold;
+  //   }
+  // }
 }
 
 

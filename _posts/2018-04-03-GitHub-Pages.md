@@ -100,7 +100,8 @@ git config --global user.email [이메일 주소]
 
 {% assign img_url = "/main_abnormal.png" | prepend: site.image_url %}
 
-[![main_abnormal]({{ img_url }}){: width="300px" : title="click to view" : .center-img}]({{ img_url }})
+[![main_abnormal]({{ img_url }}){: width="300px" : title="click to view"}]({{ img_url }})
+{: .center}
 
 포스트가 없으면 리스트가 안 뜨는게 정상이겠지만 위에 보는 것과 같이 포스트의 갯수는 카운트가 되어있다.  
 이건 깃혀브의 빌드 오류도 아니라 에러 메시지가 있는 것도 아니고 처음 문제보다 참 당황스럽고 멘붕이었지. 😨  
@@ -258,6 +259,7 @@ include:
 
 {% assign img_url = "/main_normal.png" | prepend: site.image_url %}
 [![sunyrora blog]({{ img_url }}){: width="300px" : title="click to view" : .center-img}]({{ img_url }})
+{: .center}
 
 정상적으로 잘 동작한다.
 

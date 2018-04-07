@@ -1,10 +1,9 @@
-
 .violet-box {
   @include border-radius(3px);
   text-decoration: none;
   background-color: $violet-box-bg-color;
   border: 1px solid $violet-box-border-color;
-  padding: 0 5px 0 5px;
+  padding: 5px 5px;
   color: $dark-blue;
   @include transition(background-color .3s);
 }
@@ -24,12 +23,13 @@
   // border: 1px solid orange;
   padding: 5px;
   margin: 0;
-  color: $bg-font-color;
+  color: $white;
+  text-shadow: 5px 5px 3px $dark;
 }
 
-.all-tags {
-    color: $bg-link-color;
-}
+// .all-tags {
+//   color: $bg-link-color;
+// }
 
 .category-title,
 .tag-title {
@@ -53,3 +53,5 @@
   padding-left: 10px;
   vertical-align: middle;
 }
+
+.item-list-tag {}

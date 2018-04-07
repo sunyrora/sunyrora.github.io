@@ -63,7 +63,14 @@ a {
   }
 }
 
-.selected {
+a.link-bg-white {
+  @extend a;
+  font-family: $font-sans;
+  color: $link-bg-white-color;
+}
+
+.selected,
+a.link-bg-white.selected {
   color: $hover-color;
 }
 

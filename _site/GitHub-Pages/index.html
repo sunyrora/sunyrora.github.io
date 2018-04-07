@@ -91,7 +91,7 @@ ga('send', 'pageview');
       <i class="fas fa-bars" id="sidebar-toggle"></i>
     </div>
   <div class="topmenu">
-    <a href="/"><i class="fas fa-home"></i></a>
+    <a class="btn-home" href="/"><i class="fas fa-home"></i></a>
   </div>
 </div>
 <aside class="sidebar" id="nav-profil">
@@ -107,10 +107,8 @@ ga('send', 'pageview');
   <ul>
     <li>
       
-      <spans>
-        <a   href="/">All</a>
+        <a class="link-bg-white side-menu " href="/">All</a>
         (5)
-      </span>
     </li>
 
     
@@ -121,19 +119,17 @@ ga('send', 'pageview');
       
       
       <li>
-        <span id="blog">
-          <a class="selected" href="/categories/blog">Blog</a>
+          <a class="link-bg-white side-menu selected" href="/categories/blog">Blog</a>
           (3)
-        </span></li>
+      </li>
     
       
       
       
       <li>
-        <span id="tech">
-          <a class="selected" href="/categories/tech">Tech</a>
+          <a class="link-bg-white side-menu selected" href="/categories/tech">Tech</a>
           (3)
-        </span></li>
+      </li>
     
   </ul>
 </nav>
@@ -168,12 +164,12 @@ ga('send', 'pageview');
             
               
           
-            <a class="page-category no-scale" href="/categories/blog">Blog</a>
+            <a class="link-bg-white no-scale" href="/categories/blog">Blog</a>
               
             
             , 
           
-            <a class="page-category no-scale" href="/categories/tech">Tech</a>
+            <a class="link-bg-white no-scale" href="/categories/tech">Tech</a>
           
             
               
@@ -288,7 +284,7 @@ git config <span class="nt">--global</span> user.email <span class="o">[</span>�
 <p>그렇게 이젠 잘 될 거라 믿었는데,,,, 2차 문제 발생.
 이젠 아예 안 뜨는게 아니라 뜨다 만다. 정확히는 아래 이미지처럼 메뉴는 뜨고 글 리스트가 보이지 않는다.</p>
 
-<p><a href="/assets/images/main_abnormal.png"><img src="/assets/images/main_abnormal.png" alt="main_abnormal" width="300px" title="click to view" class="center-img" /></a></p>
+<p class="center"><a href="/assets/images/main_abnormal.png"><img src="/assets/images/main_abnormal.png" alt="main_abnormal" width="300px" title="click to view" /></a></p>
 
 <p>포스트가 없으면 리스트가 안 뜨는게 정상이겠지만 위에 보는 것과 같이 포스트의 갯수는 카운트가 되어있다.<br />
 이건 깃혀브의 빌드 오류도 아니라 에러 메시지가 있는 것도 아니고 처음 문제보다 참 당황스럽고 멘붕이었지. 😨<br />
@@ -468,7 +464,7 @@ git push <span class="nt">--all</span></pre></td></tr></tbody></table></code></p
 
 <p>이제 깃허브 페이지 주소로 가서 확인해 보니</p>
 
-<p><a href="/assets/images/main_normal.png"><img src="/assets/images/main_normal.png" alt="sunyrora blog" width="300px" title="click to view" class="center-img" /></a></p>
+<p class="center"><a href="/assets/images/main_normal.png"><img src="/assets/images/main_normal.png" alt="sunyrora blog" width="300px" title="click to view" class="center-img" /></a></p>
 
 <p>정상적으로 잘 동작한다.</p>
 
@@ -495,13 +491,13 @@ git push <span class="nt">--all</span></pre></td></tr></tbody></table></code></p
       <div class="page-footer">
         <div class="page-tag">
           
-            <a class="gray-box no-anim tag" href="/tags#github pages">&#35; github pages</a>
+            <a class="violet-box no-anim tag" href="/tags#github pages">&#35; github pages</a>
           
-            <a class="gray-box no-anim tag" href="/tags#jekyll">&#35; jekyll</a>
+            <a class="violet-box no-anim tag" href="/tags#jekyll">&#35; jekyll</a>
           
-            <a class="gray-box no-anim tag" href="/tags#plugin">&#35; plugin</a>
+            <a class="violet-box no-anim tag" href="/tags#plugin">&#35; plugin</a>
           
-            <a class="gray-box no-anim tag" href="/tags#blog">&#35; blog</a>
+            <a class="violet-box no-anim tag" href="/tags#blog">&#35; blog</a>
           
         </div>
       </div>
@@ -564,7 +560,7 @@ git push <span class="nt">--all</span></pre></td></tr></tbody></table></code></p
   
   
     <div class="previous gray-box page-trail">
-      <a class="no-scale" href="/toujours-test/"><i class="fa fa-angle-left"></i>&nbsp;&nbsp;branch test</a>
+      <a class="link-bg-white no-scale" href="/toujours-test/"><i class="fa fa-angle-left"></i>&nbsp;&nbsp;branch test</a>
     </div>
    
   
@@ -603,12 +599,12 @@ git push <span class="nt">--all</span></pre></td></tr></tbody></table></code></p
 
   </article> <!-- End Article Page -->
 
-  <div class="btn-arrow">
+  <div class="btn-arrow-container">
     <div id="btn-top">
-      <a href=""><i class="fas fa-arrow-circle-up"></i></a>
+      <a class="btn-arrow" href=""><i class="fas fa-arrow-circle-up"></i></a>
     </div>
     <div id="btn-bottom">
-      <a href=""><i class="fas fa-arrow-circle-down"></i></a>
+      <a class="btn-arrow" href=""><i class="fas fa-arrow-circle-down"></i></a>
     </div>
   </div>
 </div>

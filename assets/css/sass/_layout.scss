@@ -30,7 +30,7 @@
   font-weight: bold;
 }
 
-.btn-arrow {
+.btn-arrow-container {
   @include flexbox;
   @include flex-direction(column);
   @include align-self(flex-end);
@@ -45,6 +45,10 @@
   visibility: visible;
 
   @include transition(all 0.5s ease);
+
+  // .btn-arrow {
+  //   color: $bg-link-color;
+  // }
 }
 
 .sticky-header {
@@ -63,11 +67,11 @@
   }
 
   .sticky-header {
-    top: convert-unit(1.5, em, px) + $tobbar-padding-s + 5px;
+    top: convert-unit(1.1, em, px) + $tobbar-padding-s + 5px;
   }
 
   .btn-arrow {
-    width: 1.4em;
-    font-size: 1.5em;
+    width: 1.3em;
+    font-size: 1.3em;
   }
 }

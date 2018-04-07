@@ -4,10 +4,8 @@
       {% if page.category == nil %}
         {% assign class_name = "selected" %}
       {% endif %}
-      <spans>
-        <a  {% if class_name %}class="{{class_name}}"{% endif %} href="{{site.baseurl | append: '/' | replace: '//', '/'}}">All</a>
+        <a class="link-bg-white side-menu {% if class_name %}{{class_name}}{% endif %}" href="{{site.baseurl | append: '/' | replace: '//', '/'}}">All</a>
         ({{ site.posts | size }})
-      </span>
     </li>
 
     {% capture cats %}
@@ -26,10 +24,9 @@
         {% assign class_name = "" %}
       {% endif %}
       <li>
-        <span id="{{ category | slugify }}">
-          <a {% if class_name != "" %}class="{{class_name}}"{% endif %} href="{{'/categories/' | append: page_name | prepend: site.baseurl | replace: '//', '/' }}">{{ category }}</a>
+          <a class="link-bg-white side-menu {% if class_name != "" %}{{class_name}}{% endif %}" href="{{'/categories/' | append: page_name | prepend: site.baseurl | replace: '//', '/' }}">{{ category }}</a>
           ({{ post_count }})
-        </span></li>
+      </li>
     {% endfor %}
   </ul>
 </nav>

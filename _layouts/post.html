@@ -9,7 +9,7 @@ layout: main
           Category: &nbsp;&nbsp;
           {% capture cats %}
           {% for category in page.category %}
-            <a class="page-category no-scale" href="{{'/categories/' | append: category | downcase | prepend: site.baseurl | replace: '//', '/' }}">{{ category }}</a>||
+            <a class="link-bg-white no-scale" href="{{'/categories/' | append: category | downcase | prepend: site.baseurl | replace: '//', '/' }}">{{ category }}</a>||
           {% endfor %}
           {% endcapture %}
 
@@ -48,7 +48,7 @@ layout: main
       <div class="page-footer">
         <div class="page-tag">
           {% for tag in page.tags %}
-            <a class="gray-box no-anim tag" href="/tags#{{ tag | prepend: site.baseurl | replace: "//", "/>"}}">&#35; {{ tag }}</a>
+            <a class="violet-box no-anim tag" href="/tags#{{ tag | prepend: site.baseurl | replace: "//", "/>"}}">&#35; {{ tag }}</a>
           {% endfor %}
         </div>
       </div>

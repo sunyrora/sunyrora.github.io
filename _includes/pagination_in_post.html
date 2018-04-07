@@ -28,7 +28,7 @@
   {% assign truncate_count = 20 %}
   {% if prev != "" %}
     <div class="previous gray-box page-trail">
-      <a class="no-scale" href="{{ prev }}"><i class="fa fa-angle-left"></i>&nbsp;&nbsp;{{pTitle | truncate: truncate_count, '...'}}</a>
+      <a class="link-bg-white no-scale" href="{{ prev }}"><i class="fa fa-angle-left"></i>&nbsp;&nbsp;{{pTitle | truncate: truncate_count, '...'}}</a>
     </div>
   {% endif %} 
   {% comment %} <div class="previous gray-box page-trail">
@@ -42,7 +42,7 @@
   </div> {% endcomment %}
   {% if next != "" %}
     <div class="next gray-box page-trail">
-      <a class="no-scale" href="{{ next }}">{{nTitle | truncate: truncate_count, '...'}} &nbsp;&nbsp;<i class="fa fa-angle-right"></i></a>
+      <a class="link-bg-white no-scale" href="{{ next }}">{{nTitle | truncate: truncate_count, '...'}} &nbsp;&nbsp;<i class="fa fa-angle-right"></i></a>
     </div>
   {% endif %}
 </div>

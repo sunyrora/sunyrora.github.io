@@ -23,11 +23,13 @@
     padding-left: 0.4em;
     @include align-self(center);
     vertical-align: middle;
-    font-size: 1.15em;
+    font-size: 1.2em;
 
-    a {
-      color: $bg-link-color;
-    }
+    text-shadow: 3px 3px 2px $dark;
+
+    // .btn-home {
+    //   color: $bg-link-color;
+    // }
   }
 }
 
