@@ -1,11 +1,36 @@
 
+.violet-box {
+  @include border-radius(3px);
+  text-decoration: none;
+  background-color: $violet-box-bg-color;
+  border: 1px solid $violet-box-border-color;
+  padding: 0 5px 0 5px;
+  color: $dark-blue;
+  @include transition(background-color .3s);
+}
+
+.tag {
+  font-size: 0.7em;
+  &:hover {
+    background-color: $tag-hover-color;
+  }
+}
+
 .tag-list {
   margin-bottom: 500px;
 }
 
 .tag-page-title {
+  // border: 1px solid orange;
+  padding: 5px;
   margin: 0;
+  color: $bg-font-color;
 }
+
+.all-tags {
+    color: $bg-link-color;
+}
+
 .category-title,
 .tag-title {
   border-bottom: solid 1px $dark;
@@ -14,7 +39,8 @@
   @include align-items(center);
   width: 100%;
   @include align-self(flex-start);
-  background-color: $lightgray;
+  background-color: $bg-color;
+  color: $bg-font-color;
 }
 
 .category_name,

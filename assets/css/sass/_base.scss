@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: $default-font-size + px;
+  line-height: 1.5em;
+}
+
 body {
   @include flexbox;
   @include flex_direction(column);
@@ -20,6 +25,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   color: $title-color;
   // letter-spacing: -.020rem;
+  margin: .3em;
+
 }
 
 img {
@@ -43,7 +50,7 @@ a {
   font-family: $font-serif;
   display: inline-block;
   text-decoration: none;
-  color: $dark-blue;
+  color: $link-color;
   @include transition(all .3s cubic-bezier(0.13, 0.43, 0.54, 1.82));
 
   &.no-anim, &.no-scale {

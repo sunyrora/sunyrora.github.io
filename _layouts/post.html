@@ -3,9 +3,8 @@ layout: main
 ---
 
   <article class="article-page">
-    <div class="wrap-content">
-      <!-- print cotegory list on the top -->
-      <div class="post-header sticky-header">
+    <!-- print cotegory list on the top -->
+    <div class="post-header sticky-header">
         <div>
           Category: &nbsp;&nbsp;
           {% capture cats %}
@@ -29,6 +28,7 @@ layout: main
       </div>
       <!-- end category list -->
 
+    <div class="wrap-content">
       <header class="header-page">
         <h1 class="page-title">{{page.title}}</h1>
         <div class="page-date"><span>{{page.date | date: '%Y, %b %d %H:%M'}}</span></div>

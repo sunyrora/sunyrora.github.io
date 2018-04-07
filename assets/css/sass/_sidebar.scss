@@ -31,7 +31,7 @@
   img {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    @include border-radius(50%);
     @include transition-with-transform(0.35s);
     &:hover {
       @include transform(scale3d(0.90,0.90,1));
@@ -156,3 +156,27 @@ footer {
   @include transform(translateX($sidebar-width));
 }
 
+
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+  .sidebar {
+    left: -($sidebar-width-s);
+    width: $sidebar-width-s;
+  }
+
+  #sidebar-checkbox:checked ~ .sidebar {
+    z-index: 10;
+    visibility: visible;
+    @include transform(translateX($sidebar-width-s));
+  }
+  
+  #sidebar-checkbox:checked ~ .content-box {
+    padding-left: $sidebar-width-s + 10px;
+  }
+  
+  #sidebar-checkbox:checked ~ .topbar {
+    @include transform(translateX($sidebar-width-s));
+  }
+}

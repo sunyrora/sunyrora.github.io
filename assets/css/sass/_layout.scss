@@ -53,3 +53,21 @@
   padding-bottom: 5px;
   z-index: 1000;
 }
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+  .content-box {
+    padding: 10px;
+    padding-top: 30px;
+  }
+
+  .sticky-header {
+    top: convert-unit(1.5, em, px) + $tobbar-padding-s + 5px;
+  }
+
+  .btn-arrow {
+    width: 1.4em;
+    font-size: 1.5em;
+  }
+}
