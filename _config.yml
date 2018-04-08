@@ -29,6 +29,7 @@ user_name: sunyrora
 user_photo: nabi_128.jpg
 twitter_username: 
 github_username:  sunyrora
+author: sunyrora
 
 # Disqus
 discus-identifier: sunyrora
@@ -59,6 +60,7 @@ kramdown:
 plugins:
   - jekyll-sitemap
   - jekyll-paginate-v2
+  - jekyll-seo-tag
 
 
 # Build settings

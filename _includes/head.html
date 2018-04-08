@@ -2,10 +2,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
 
-{% assign meta_title = page.title | default: site.title %}
+{% seo %}
+
+{% comment %} {% assign meta_title = page.title | default: site.title %}
 {% assign meta_author = page.author | default: site.author %}
 {% assign meta_description = page.descripton || default: site.description }
-{% assign meta_url = site.url | append: site.baseurl | append: page.url | replace: "//", "/" %}
+{% assign meta_url = site.url | append: site.baseurl | append: page.url | replace: "//", "/" %} {% endcomment %}
 {% assign meta_img = page.image | default: site.user_photo %}
 {% unless meta_image contains "://" %}
   {% assign meta_img = meta_img | prepend: site.baseurl | prepend: site.url %}
@@ -16,20 +18,20 @@
 {% else %}
   {% assign meta_type = "website" %}
 {% endif %}
-
+{% comment %} 
 <title>
   {% if meta_title != site.title %}
     {{ meta_title | append: " - " | append: site.title }}
   {% else %}
     {{ meta_title }}
   {% endif %}
-</title>
-
+</title> {% endcomment %}
+{% comment %} 
 <meta name="title" content="{{ meta_title }}" property="og:site_name">
 <meta name="author" content="{{ meta_author }}" property="og:title">
-<meta name="description" content="{{meta_description}}" property="og:description">
+<meta name="description" content="{{meta_description}}" property="og:description"> {% endcomment %}
 <meta content="{{meta_type}}" property="og:type">
-<meta content="{{meta_url}}" property="og:url">
+{% comment %} <meta content="{{meta_url}}" property="og:url"> {% endcomment %}
 <meta content="{{meta_img}}" property="og:image">
 {% if page.date %}
   <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
