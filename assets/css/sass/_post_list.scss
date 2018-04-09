@@ -62,8 +62,8 @@
       .post-date {
         // border: 1px solid red;
         font-size: 0.75em;
-        @include align-self(flex-start);
-        @include align-self(center);
+        padding-bottom: 5px;
+        @include align-self(flex-end);
       }
     }
 
