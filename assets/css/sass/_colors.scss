@@ -1,4 +1,4 @@
-$body-color: #515151;
+$body-color: #888888;
 $white: #ffffff;
 $lightgray: #fafafa;
 $gray: #ecf0f1;
@@ -6,21 +6,30 @@ $dark-gray: #a0a0a0;
 $dark-blue: #263959;
 $dark: #333030;
 
-$bg-color: #f2f2f8;
+$bg-color: #fbfbfb;
 $bg-font-color: $dark;
 $title-color: #1d3052;
 
-$hover-color: orange;
-$link-bg-white-color: $title-color;
-$link-color: $title-color;
+$article-bg-color: $bg-color;
+
+$post-item-bg-color: $bg-color;
+$post-item-border-color: #eeeeee;
+
+$img-border-color: $post-item-border-color;
+
+$hover-color: #F57F17;
+$link-color: #2381c3;
+$link-bg-white-color: #2381c3;
+$link-post-title-color: #343434;
 
 $tag-page-title-color: $dark;
+$tag-title-bg-color: #eeeeee;
 $tag-hover-color: $gray;
 $tag-box-bg-color: $lightgray;
 $tag-box-border-color: $gray;
 
 
 $blockquote-bg-color1: #f7fafc;
-$blockquote-bg-color: #fbf9ff;
-$blockquote-color: #5c4d78;
-$blockquote-border-color: #a967a8;
+$blockquote-bg-color: #f8fbff;
+$blockquote-color: #01579B;
+$blockquote-border-color: #00BCD4;

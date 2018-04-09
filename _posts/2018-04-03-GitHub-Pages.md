@@ -66,7 +66,7 @@ author: sunyrora
 
 무엇이 문제일까 생각하며 git repository setting에 들어갔더니 GitHub Pages 부분에 에러 메시지가 떠있다.
 
-> Unable to build page. Please try again later.
+>> Unable to build page. Please try again later.
 
 뭐 특별한 이유가 써 있는 것도 아니고 그냥 빌드할 수 없다니 뭘 어쩌라는 건가..
 그러다 갑자기 어딘가에서 본, 에러가 나면 메일로 내용이 날아온다는 것이 떠올랐다.  

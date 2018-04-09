@@ -62,6 +62,7 @@ plugins:
   - jekyll-paginate-v2
   - jekyll-seo-tag
   - jekyll-feed
+  - jemoji
 
 
 # Build settings

@@ -19,6 +19,16 @@
   margin-bottom: 500px;
 }
 
+.tags {
+  max-width: $max-container-width;
+  margin-bottom: 50px;
+}
+
+.tag-wrapper {
+  // border: 1px solid royalblue;
+  margin-bottom: 70px;
+}
+
 .tag-page-title {
   // border: 1px solid orange;
   padding: 5px;
@@ -43,6 +53,11 @@
   color: $bg-font-color;
 }
 
+.tag-title {
+  // background: linear-gradient(90deg, $tag-title-bg-color, $bg-color);
+  background: linear-gradient(to right, $bg-color, $post-item-border-color, $bg-color);
+}
+
 .category_name,
 .tag-name {
   font-weight: 400;
@@ -53,5 +68,3 @@
   padding-left: 10px;
   vertical-align: middle;
 }
-
-.item-list-tag {}
