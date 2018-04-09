@@ -4,7 +4,7 @@ title: "GitHub Pages 로 블로그를 시작해볼까?"
 description: GitHub pages hosting, custom plugins
 date: 2018-04-03 12:05:43
 img:
-tags: [github pages, jekyll, plugin, blog]
+tags: [github pages, jekyll, plugin, git subdirectory-filter, blog]
 category: [Blog, Tech]
 author: sunyrora
 ---
