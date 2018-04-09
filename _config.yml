@@ -68,7 +68,7 @@ plugins:
 asset_url: /assets
 sass:
   sass_dir: /assets/css/sass
-  # style: compressed
+  style: compressed
 image_url: /assets/images
 css_url: /assets/css
 
