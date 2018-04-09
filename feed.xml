@@ -1,4 +1,151 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://sunyrora.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sunyrora.github.io/" rel="alternate" type="text/html" /><updated>2018-04-09T13:17:17+02:00</updated><id>https://sunyrora.github.io/</id><title type="html">Sunyrora’s Blog</title><subtitle>Sunyrora's Blog.</subtitle><author><name>sunyrora</name></author><entry><title type="html">GitHub Pages 로 블로그를 시작해볼까?</title><link href="https://sunyrora.github.io/GitHub-Pages/" rel="alternate" type="text/html" title="GitHub Pages 로 블로그를 시작해볼까?" /><published>2018-04-03T14:05:43+02:00</published><updated>2018-04-03T14:05:43+02:00</updated><id>https://sunyrora.github.io/GitHub-Pages</id><content type="html" xml:base="https://sunyrora.github.io/GitHub-Pages/">&lt;p&gt;문득 공부하던 것을 블로그로 정리해 놓으면 좋겠다는 생각이 들었다.&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://sunyrora.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sunyrora.github.io/" rel="alternate" type="text/html" /><updated>2018-04-09T15:54:04+02:00</updated><id>https://sunyrora.github.io/</id><title type="html">Sunyrora’s Blog</title><subtitle>Sunyrora's Blog.</subtitle><author><name>sunyrora</name></author><entry><title type="html">iOS 10에서 flex colum 레이아웃 깨짐 현상</title><link href="https://sunyrora.github.io/iphone-flex/" rel="alternate" type="text/html" title="iOS 10에서 flex colum 레이아웃 깨짐 현상" /><published>2018-04-05T22:40:40+02:00</published><updated>2018-04-05T22:40:40+02:00</updated><id>https://sunyrora.github.io/iphone-flex</id><content type="html" xml:base="https://sunyrora.github.io/iphone-flex/">&lt;p&gt;처음 빌드 후 깃허브에 업로드를 하고, 나의 아이폰에서 글을 확인해보니 레이아웃이 엉망으로 출력이 되고 있었다.&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;a href=&quot;/assets/images/ios_flex_layout.png&quot;&gt;&lt;img src=&quot;/assets/images/ios_flex_layout.png&quot; alt=&quot;ios_layout_break&quot; width=&quot;300px&quot; title=&quot;click to view&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;위 이미지의 빨간 테두리에 보이는 것처럼, 화면 맨 아래에 위치해야할 디스커스가 맨 위에서 짤려있고, 화면 오른쪽 아래에 위치해야할 화살표 역시 위에 위치해 있다.&lt;br /&gt;
+이전/다음 포스트 버튼은 글 어딘가 중간쯤에 있었다.&lt;/p&gt;
+
+&lt;p&gt;뭔가 모바일용에서 정상 작동하지 않는 코드가 있나 햇는데, 안드로이드 폰에서는 정상으로 출력된다.
+구형 브라우저 및 최신 브라우저에서 모두.&lt;br /&gt;
+아이폰에서는 사파리만 사용하고 있었는데, 브라우저 문제인가 확인해보기 위해 아이폰용 크롬, 파이어폭스, 오페라에서 확인해 보니 모두 같은 현상이다.&lt;/p&gt;
+
+&lt;p&gt;이번엔 아이맥의 시뮬레이터에서도 실행을 해보니 정상 작동한다.&lt;br /&gt;
+내 아이폰은 6s, iOS 10.3.3 이고, 시뮬의 iOS 버전은 11.2 이다.
+이 쯤 되면 iOS의 문제인 것 같긴한데, 뭣이 문제인지 알 수가 없었다.&lt;br /&gt;
+검색을 해봐도 명확한 답변을 찾을 수 없었는데, 레이아웃을 이리저리 변경하고 테스트를 던 중&lt;br /&gt;
+‘height: 100%’ 값을 삭제했더니 제대로 출력이 된다.
+😲 ?&lt;/p&gt;
+
+&lt;p&gt;이번엔 검색어를 더 구체화해서 찾아보니 아래와 같은 글을 발견했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.damirscorner.com/blog/posts/20180209-FlexboxRelativeHeightIssueInIos10.html&quot;&gt;Flexbox Relative Height Issue in iOS 10&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;결론은 역시 iOS 10에서의 이슈였으며 iOS 11에서는 수정되었다고 한다.
+이슈가 됐던 부분은, flex-direction이 column 일때, 부모 엘리먼트의 높이를 설정하지 않고 자식에서 높이를 % 로 지정하면 높이를 제대로 계산하지 못하는 문제이다.&lt;/p&gt;
+
+&lt;p&gt;하지만 저 글에서는 부모 position을 absolute로하고, 자식은 relative로 해야한다고 했지만,
+난 단지 자식의 height을 삭제하는 것만으로도 해결이 됐다.&lt;/p&gt;
+
+&lt;h3 id=&quot;재현&quot;&gt;재현&lt;/h3&gt;
+&lt;p&gt;간단한 코드로 문제를 재현해보자면 아래와 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  container
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;inner-container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    inner-container
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;child-a&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      child-a
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;child-b&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      child-b
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;그리고 inner-container의 height을 100% 로 설정한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;.container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;flex-direction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;navajowhite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nc&quot;&gt;.inner-container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;flex-direction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;mediumslateblue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nc&quot;&gt;.child-a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;mediumseagreen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nc&quot;&gt;.child-b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;pink&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nc&quot;&gt;.child-a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.child-b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 코드를 iOS 10.3.3 에서 실행하면 아래와 같은 모양으로 출력이된다.&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;a href=&quot;/assets/images/ios_flex_with_height_percent.png&quot;&gt;&lt;img src=&quot;/assets/images/ios_flex_with_height_percent.png&quot; alt=&quot;ios_flex_height_percent&quot; width=&quot;300px&quot; title=&quot;click to view&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;inner-container가 제대로 출력되지 않는 것을 볼 수 있다.&lt;br /&gt;
+여기서 inner-container의 height을 삭제하고 실행을 하면 아래와 같이 원하는 결과를 얻을 수 있다.&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;a href=&quot;/assets/images/ios_flex_without_height.png&quot;&gt;&lt;img src=&quot;/assets/images/ios_flex_without_height.png&quot; alt=&quot;ios_flex_without_height&quot; width=&quot;300px&quot; title=&quot;click to view&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;inner-container의 높이가 자식의 높이만큼 자동으로 잘 적용이 되었다.&lt;/p&gt;
+
+&lt;h3 id=&quot;결론은&quot;&gt;결론은&lt;/h3&gt;
+
+&lt;p&gt;iOS 10(내 폰 10.3.3 에서만 테스트) 에서 flex-direction: column 을 사용할 시,&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;부모 엘리먼트의 높이를 설정한 경우
+    &lt;ul&gt;
+      &lt;li&gt;자식 엘리먼트의 높이에 %, 또는 px 모두 사용할 수 있음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;부모 엘리먼트의 높이를 설정하지 않았다면
+    &lt;ul&gt;
+      &lt;li&gt;자식 엘리먼트의 높이에 %를 사용할 수 없음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>sunyrora</name></author><category term="[&quot;Tech&quot;]" /><category term="iOS flex" /><category term="iPhone flex" /><category term="flex column" /><summary type="html">처음 빌드 후 깃허브에 업로드를 하고, 나의 아이폰에서 글을 확인해보니 레이아웃이 엉망으로 출력이 되고 있었다.</summary></entry><entry><title type="html">GitHub Pages 로 블로그를 시작해볼까?</title><link href="https://sunyrora.github.io/GitHub-Pages/" rel="alternate" type="text/html" title="GitHub Pages 로 블로그를 시작해볼까?" /><published>2018-04-03T14:05:43+02:00</published><updated>2018-04-03T14:05:43+02:00</updated><id>https://sunyrora.github.io/GitHub-Pages</id><content type="html" xml:base="https://sunyrora.github.io/GitHub-Pages/">&lt;p&gt;문득 공부하던 것을 블로그로 정리해 놓으면 좋겠다는 생각이 들었다.&lt;br /&gt;
 여러가지 공부한 것을 그대로 지나가 버리면 시간이 지나면 금방 잊어버리기도 하고, 나중에 찾아보면 좋을 것 같아서 시작해 보았다.&lt;/p&gt;
 
 &lt;p&gt;여러가지 서비스들이 있는데, GitHub Pages 로 선택했다.&lt;br /&gt;
@@ -297,30 +444,4 @@ git push &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt;
 작성하는 중간에도 수정 사항이 보여서 수정하고, 문제 해결도 하고, 한 번 더 확인하고…&lt;br /&gt;
 그래도 아직도 추가해야할 것도 손봐야 할 것도 많다.ㅜㅜ&lt;/p&gt;
 
-&lt;p&gt;원래 목적을 잃지 않게 균형 잘 잡아야겠다………&lt;/p&gt;</content><author><name>sunyrora</name></author><category term="[&quot;Blog&quot;, &quot;Tech&quot;]" /><category term="github pages" /><category term="jekyll" /><category term="plugin" /><category term="blog" /><summary type="html">문득 공부하던 것을 블로그로 정리해 놓으면 좋겠다는 생각이 들었다. 여러가지 공부한 것을 그대로 지나가 버리면 시간이 지나면 금방 잊어버리기도 하고, 나중에 찾아보면 좋을 것 같아서 시작해 보았다.</summary></entry><entry><title type="html">LongTitle-Test-대한민국의 영토는 한반도와 그 부속도서로 한다. 대통령은 국민의 보통·평등·직접</title><link href="https://sunyrora.github.io/Long-Title-Test/" rel="alternate" type="text/html" title="LongTitle-Test-대한민국의 영토는 한반도와 그 부속도서로 한다. 대통령은 국민의 보통·평등·직접" /><published>2018-03-28T15:12:13+02:00</published><updated>2018-03-28T15:12:13+02:00</updated><id>https://sunyrora.github.io/Long-Title-Test</id><content type="html" xml:base="https://sunyrora.github.io/Long-Title-Test/">&lt;p&gt;대한민국의 영토는 한반도와 그 부속도서로 한다. 대통령은 국민의 보통·평등·직접·비밀선거에 의하여 선출한다. 대통령은 내란 또는 외환의 죄를 범한 경우를 제외하고는 재직중 형사상의 소추를 받지 아니한다.&lt;/p&gt;
-
-&lt;p&gt;국무위원은 국무총리의 제청으로 대통령이 임명한다. 헌법재판소에서 법률의 위헌결정, 탄핵의 결정, 정당해산의 결정 또는 헌법소원에 관한 인용결정을 할 때에는 재판관 6인 이상의 찬성이 있어야 한다.&lt;/p&gt;
-
-&lt;p&gt;감사위원은 원장의 제청으로 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다. 사면·감형 및 복권에 관한 사항은 법률로 정한다.&lt;/p&gt;
-
-&lt;p&gt;근로자는 근로조건의 향상을 위하여 자주적인 단결권·단체교섭권 및 단체행동권을 가진다. 국교는 인정되지 아니하며, 종교와 정치는 분리된다. 국회는 법률에 저촉되지 아니하는 범위안에서 의사와 내부규율에 관한 규칙을 제정할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;모든 국민은 인간다운 생활을 할 권리를 가진다. 국회의 정기회는 법률이 정하는 바에 의하여 매년 1회 집회되며, 국회의 임시회는 대통령 또는 국회재적의원 4분의 1 이상의 요구에 의하여 집회된다.&lt;/p&gt;
-
-&lt;p&gt;비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병·초소·유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다. 다만, 사형을 선고한 경우에는 그러하지 아니하다.&lt;/p&gt;
-
-&lt;p&gt;국무총리 또는 행정각부의 장은 소관사무에 관하여 법률이나 대통령령의 위임 또는 직권으로 총리령 또는 부령을 발할 수 있다. 명령·규칙 또는 처분이 헌법이나 법률에 위반되는 여부가 재판의 전제가 된 경우에는 대법원은 이를 최종적으로 심사할 권한을 가진다.&lt;/p&gt;
-
-&lt;p&gt;국가안전보장회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 모든 국민은 그 보호하는 자녀에게 적어도 초등교육과 법률이 정하는 교육을 받게 할 의무를 진다.&lt;/p&gt;
-
-&lt;p&gt;정부는 예산에 변경을 가할 필요가 있을 때에는 추가경정예산안을 편성하여 국회에 제출할 수 있다. 헌법재판소의 장은 국회의 동의를 얻어 재판관중에서 대통령이 임명한다.&lt;/p&gt;
-
-&lt;p&gt;국가는 재해를 예방하고 그 위험으로부터 국민을 보호하기 위하여 노력하여야 한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다.&lt;/p&gt;</content><author><name>sunyrora</name></author><category term="[&quot;Tech&quot;]" /><category term="long" /><category term="title" /><category term="jekyll" /><summary type="html">대한민국의 영토는 한반도와 그 부속도서로 한다. 대통령은 국민의 보통·평등·직접·비밀선거에 의하여 선출한다. 대통령은 내란 또는 외환의 죄를 범한 경우를 제외하고는 재직중 형사상의 소추를 받지 아니한다.</summary></entry><entry><title type="html">Second post</title><link href="https://sunyrora.github.io/second-post/" rel="alternate" type="text/html" title="Second post" /><published>2018-03-28T01:16:30+02:00</published><updated>2018-03-28T01:16:30+02:00</updated><id>https://sunyrora.github.io/second-post</id><content type="html" xml:base="https://sunyrora.github.io/second-post/">&lt;p&gt;Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là, mais la majeure partie d’entre elles a été altérée par l’addition d’humour ou de mots aléatoires qui ne ressemblent pas une seconde à du texte standard. Si vous voulez utiliser un passage du Lorem Ipsum, vous devez être sûr qu’il n’y a rien d’embarrassant caché dans le texte. Tous les générateurs de Lorem Ipsum sur Internet tendent à reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul vrai générateur de Lorem Ipsum. Iil utilise un dictionnaire de plus de 200 mots latins, en combinaison de plusieurs structures de phrases, pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient des mots farfelus, ou des touches d’humour.&lt;/p&gt;</content><author><name>sunyrora</name></author><category term="[&quot;Blog&quot;]" /><category term="blog" /><category term="deux" /><summary type="html">Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là, mais la majeure partie d’entre elles a été altérée par l’addition d’humour ou de mots aléatoires qui ne ressemblent pas une seconde à du texte standard. Si vous voulez utiliser un passage du Lorem Ipsum, vous devez être sûr qu’il n’y a rien d’embarrassant caché dans le texte. Tous les générateurs de Lorem Ipsum sur Internet tendent à reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul vrai générateur de Lorem Ipsum. Iil utilise un dictionnaire de plus de 200 mots latins, en combinaison de plusieurs structures de phrases, pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient des mots farfelus, ou des touches d’humour.</summary></entry><entry><title type="html">First post</title><link href="https://sunyrora.github.io/first-post/" rel="alternate" type="text/html" title="First post" /><published>2018-03-27T22:50:47+02:00</published><updated>2018-03-27T22:50:47+02:00</updated><id>https://sunyrora.github.io/first-post</id><content type="html" xml:base="https://sunyrora.github.io/first-post/">&lt;p&gt;On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L’avantage du Lorem Ipsum sur un texte générique comme ‘Du texte. Du texte. Du texte.’ est qu’il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour ‘Lorem Ipsum’ vous conduira vers de nombreux sites qui n’en sont encore qu’à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d’y rajouter de petits clins d’oeil, voire des phrases embarassantes).&lt;/p&gt;</content><author><name>sunyrora</name></author><category term="[&quot;Blog&quot;]" /><category term="blog" /><summary type="html">On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L’avantage du Lorem Ipsum sur un texte générique comme ‘Du texte. Du texte. Du texte.’ est qu’il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour ‘Lorem Ipsum’ vous conduira vers de nombreux sites qui n’en sont encore qu’à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d’y rajouter de petits clins d’oeil, voire des phrases embarassantes).</summary></entry><entry><title type="html">branch test</title><link href="https://sunyrora.github.io/toujours-test/" rel="alternate" type="text/html" title="branch test" /><published>2018-03-04T13:20:13+01:00</published><updated>2018-03-04T13:20:13+01:00</updated><id>https://sunyrora.github.io/toujours-test</id><content type="html" xml:base="https://sunyrora.github.io/toujours-test/">&lt;p&gt;릴케 된 못 하나에 다 둘 있습니다. 많은 헤일 아스라히 책상을 나는 오면 이름과, 벌레는 나의 봅니다. 딴은 소녀들의 하나에 별 가난한 무성할 사랑과 묻힌 지나가는 계십니다. 무성할 나는 릴케 거외다. 그러나 아직 나는 이제 듯합니다. 북간도에 별이 다 나는 하나의 강아지, 너무나 이름과, 별들을 까닭입니다. 지나고 프랑시스 라이너 별 나는 불러 버리었습니다. 패, 보고, 쓸쓸함과 흙으로 같이 있습니다. 추억과 내린 어머니 묻힌 둘 하나 계집애들의 쉬이 별 버리었습니다. 이름과 경, 이름과, 이 같이 까닭이요, 딴은 이제 있습니다.&lt;/p&gt;
-
-&lt;p&gt;쉬이 별에도 별빛이 차 릴케 하나에 별 계십니다. 둘 나는 불러 이런 가을로 까닭입니다. 별 써 슬퍼하는 이름자를 무엇인지 책상을 나의 했던 같이 버리었습니다. 어머니, 묻힌 불러 시인의 애기 봅니다. 풀이 그러나 그리워 이름과, 까닭이요, 아스라히 말 있습니다. 둘 어머니, 하나 못 속의 무성할 차 겨울이 있습니다. 슬퍼하는 멀듯이, 아직 그리고 풀이 차 듯합니다. 이름과, 위에도 별 별 까닭입니다. 별 하나에 어머니, 마디씩 비둘기, 그러나 그리고 계십니다. 무성할 부끄러운 쓸쓸함과 내 남은 불러 봅니다. 프랑시스 다 같이 북간도에 이 오는 가득 듯합니다.&lt;/p&gt;
-
-&lt;p&gt;나는 새겨지는 파란 무덤 프랑시스 부끄러운 가슴속에 봅니다. 별 때 묻힌 별에도 옥 겨울이 나는 까닭입니다. 어머님, 차 청춘이 잠, 많은 하나에 어머니, 하나 봅니다. 별 노새, 별들을 까닭입니다. 헤일 아직 이름과, 사랑과 어머님, 봅니다. 북간도에 다하지 아름다운 경, 시인의 않은 까닭입니다. 마리아 벌레는 쓸쓸함과 이웃 까닭입니다. 가슴속에 잔디가 오면 까닭입니다. 별빛이 자랑처럼 내일 까닭이요, 풀이 옥 하나에 라이너 노루, 거외다.&lt;/p&gt;
-
-&lt;p&gt;피어나듯이 새겨지는 별들을 있습니다. 어머니 책상을 나는 토끼, 하나 아름다운 하늘에는 오는 있습니다. 같이 오면 노새, 이런 까닭입니다. 이름과, 이름과, 별에도 없이 쓸쓸함과 듯합니다. 프랑시스 우는 않은 다 별 까닭입니다. 남은 지나고 별 것은 계십니다. 피어나듯이 릴케 나의 별 보고, 하나에 버리었습니다. 이름과, 까닭이요, 무엇인지 언덕 벌레는 이름과, 사랑과 멀듯이, 까닭입니다. 하늘에는 가난한 노루, 어머님, 새워 헤는 하나에 이네들은 그리고 까닭입니다. 어머님, 때 부끄러운 써 너무나 듯합니다.&lt;/p&gt;
-
-&lt;p&gt;별 오면 프랑시스 북간도에 아름다운 무성할 별 듯합니다. 못 이런 나의 다 까닭입니다. 프랑시스 별들을 남은 때 아름다운 잠, 릴케 내린 경, 듯합니다. 이국 가슴속에 하나에 남은 멀듯이, 라이너 봅니다. 하나에 멀리 언덕 마리아 쓸쓸함과 있습니다. 별이 한 사랑과 소학교 묻힌 된 이름을 우는 별 봅니다. 경, 가득 남은 까닭입니다. 다 비둘기, 벌레는 있습니다. 내일 이름자 이름과, 별들을 별에도 오면 잔디가 하나에 봅니다.&lt;/p&gt;</content><author><name>sunyrora</name></author><category term="[&quot;Tech&quot;]" /><category term="jekyll" /><category term="plugin" /><summary type="html">릴케 된 못 하나에 다 둘 있습니다. 많은 헤일 아스라히 책상을 나는 오면 이름과, 벌레는 나의 봅니다. 딴은 소녀들의 하나에 별 가난한 무성할 사랑과 묻힌 지나가는 계십니다. 무성할 나는 릴케 거외다. 그러나 아직 나는 이제 듯합니다. 북간도에 별이 다 나는 하나의 강아지, 너무나 이름과, 별들을 까닭입니다. 지나고 프랑시스 라이너 별 나는 불러 버리었습니다. 패, 보고, 쓸쓸함과 흙으로 같이 있습니다. 추억과 내린 어머니 묻힌 둘 하나 계집애들의 쉬이 별 버리었습니다. 이름과 경, 이름과, 이 같이 까닭이요, 딴은 이제 있습니다.</summary></entry></feed>
+&lt;p&gt;원래 목적을 잃지 않게 균형 잘 잡아야겠다………&lt;/p&gt;</content><author><name>sunyrora</name></author><category term="[&quot;Blog&quot;, &quot;Tech&quot;]" /><category term="github pages" /><category term="jekyll" /><category term="plugin" /><category term="blog" /><summary type="html">문득 공부하던 것을 블로그로 정리해 놓으면 좋겠다는 생각이 들었다. 여러가지 공부한 것을 그대로 지나가 버리면 시간이 지나면 금방 잊어버리기도 하고, 나중에 찾아보면 좋을 것 같아서 시작해 보았다.</summary></entry><entry><title type="html">First post</title><link href="https://sunyrora.github.io/first-post/" rel="alternate" type="text/html" title="First post" /><published>2018-03-27T22:50:47+02:00</published><updated>2018-03-27T22:50:47+02:00</updated><id>https://sunyrora.github.io/first-post</id><content type="html" xml:base="https://sunyrora.github.io/first-post/">&lt;p&gt;On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L’avantage du Lorem Ipsum sur un texte générique comme ‘Du texte. Du texte. Du texte.’ est qu’il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour ‘Lorem Ipsum’ vous conduira vers de nombreux sites qui n’en sont encore qu’à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d’y rajouter de petits clins d’oeil, voire des phrases embarassantes).&lt;/p&gt;</content><author><name>sunyrora</name></author><category term="[&quot;Blog&quot;]" /><category term="blog" /><summary type="html">On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L’avantage du Lorem Ipsum sur un texte générique comme ‘Du texte. Du texte. Du texte.’ est qu’il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour ‘Lorem Ipsum’ vous conduira vers de nombreux sites qui n’en sont encore qu’à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d’y rajouter de petits clins d’oeil, voire des phrases embarassantes).</summary></entry></feed>
