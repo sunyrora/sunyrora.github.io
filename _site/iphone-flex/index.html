@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+      <!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116752075-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116752075-1');
+</script>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>iOS 10에서 flex colum 레이아웃 깨짐 현상 | Sunyrora’s Blog</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="iOS 10에서 flex colum 레이아웃 깨짐 현상" />
+<meta name="author" content="sunyrora" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="iOS 10에서 flex layout direction이 colum일 때 height 값 제대로 계산 못하는 현상" />
+<meta property="og:description" content="iOS 10에서 flex layout direction이 colum일 때 height 값 제대로 계산 못하는 현상" />
+<link rel="canonical" href="https://sunyrora.github.io/iphone-flex/" />
+<meta property="og:url" content="https://sunyrora.github.io/iphone-flex/" />
+<meta property="og:site_name" content="Sunyrora’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-04-05T22:40:40+02:00" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"sunyrora"},"description":"iOS 10에서 flex layout direction이 colum일 때 height 값 제대로 계산 못하는 현상","@type":"BlogPosting","headline":"iOS 10에서 flex colum 레이아웃 깨짐 현상","dateModified":"2018-04-05T22:40:40+02:00","datePublished":"2018-04-05T22:40:40+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://sunyrora.github.io/iphone-flex/"},"url":"https://sunyrora.github.io/iphone-flex/","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<!--
+
+
+
+-->
+
+
+
+
+
+<!-- 
+<title>
+  
+    iOS 10에서 flex colum 레이아웃 깨짐 현상 - Sunyrora's Blog
+  
+</title>
+
+<meta name="title" content="iOS 10에서 flex colum 레이아웃 깨짐 현상" property="og:site_name">
+<meta name="author" content="sunyrora" property="og:title">
+<meta name="description" content="Sunyrora's Blog./iphone-flex/" property="og:description"> 
+-->
+<meta content="article" property="og:type">
+
+<meta content="https://sunyrora.github.ionabi_128.jpg" property="og:image">
+
+  <meta content="2018-04-05T22:40:40+02:00" property="article:published_time">
+
+
+
+  
+    <meta content="Tech" property="article:section">
+  
+
+
+
+  
+    <meta content="iOS flex" property="article:tag">
+  
+    <meta content="iPhone flex" property="article:tag">
+  
+    <meta content="flex column" property="article:tag">
+  
+ 
+
+<link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicon/apple-touch-icon-114x114.png">
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#263959">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#263959">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+
+<!--
+
+
+<link rel="canonical" href=https://sunyrora.github.io/iphone-flex/>
+-->
+
+<link type="application/atom+xml" rel="alternate" href="https://sunyrora.github.io/feed.xml" title="Sunyrora's Blog" />
+
+
+<link href="https://fonts.googleapis.com/css?family=Lato:300i,400,700|Nanum+Gothic:400,700|Nanum+Myeongjo:400,700|PT+Serif:400,700" rel="stylesheet">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
+<!-- Styles -->
+<link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+<body>
+  <div class="wrapper">
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<div class="topbar">
+    <div class="sidebar-toggle">
+      <i class="fas fa-bars" id="sidebar-toggle"></i>
+    </div>
+  <div class="topmenu">
+    <a class="btn-home" href="/"><i class="fas fa-home"></i></a>
+  </div>
+</div>
+<aside class="sidebar" id="nav-profil">
+  <header>
+    <div class="profil">
+      <a href="/">
+              <img class="profil-img" src="/assets/images/nabi_128.jpg" alt="sunyrora" />
+      </a>
+      <div><span class="user-name">sunyrora</span></div>
+      <p></p>
+    </div>
+    <nav class="nav-categories">
+  <ul>
+    <li>
+      
+        <a class="link-bg-white side-menu " href="/">All</a>
+        (3)
+    </li>
+
+    
+
+    
+    
+      
+      
+      
+      <li>
+          <a class="link-bg-white side-menu " href="/categories/blog">Blog</a>
+          (2)
+      </li>
+    
+      
+      
+      
+      <li>
+          <a class="link-bg-white side-menu selected" href="/categories/tech">Tech</a>
+          (2)
+      </li>
+    
+  </ul>
+</nav>
+  </header>
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+        <li>
+          <a href="http://github.com/sunyrora" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a>
+        </li>
+        
+      </ul>
+    </section>
+    <div class="copyright">
+      <p>2018 &copy; sunyrora</p>
+    </div>
+  </footer>
+</aside>
+<div class="content-box" id="contents">
+    <article class="article-page">
+    <!-- print cotegory list on the top -->
+    <div class="post-header sticky-header">
+        <div>
+          Category: &nbsp;&nbsp;
+          
+
+          <!-- 마지막 빈 배열 제외 하고 출력 -->
+          
+          
+            
+              
+          
+            <a class="link-bg-white no-scale" href="/categories/tech">Tech</a>
+              
+            
+              
+        </div>
+      </div>
+      <!-- end category list -->
+
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">iOS 10에서 flex colum 레이아웃 깨짐 현상</h1>
+        <div class="page-date"><span>2018, Apr 05 22:40</span></div>
+      </header>
+
+
+      <div class="content-body">
+        
+        <p>처음 빌드 후 깃허브에 업로드를 하고, 나의 아이폰에서 글을 확인해보니 레이아웃이 엉망으로 출력이 되고 있었다.</p>
+
+<p class="center"><a href="/assets/images/ios_flex_layout.png"><img src="/assets/images/ios_flex_layout.png" alt="ios_layout_break" width="300px" title="click to view" /></a></p>
+
+<p>위 이미지의 빨간 테두리에 보이는 것처럼, 화면 맨 아래에 위치해야할 디스커스가 맨 위에서 짤려있고, 화면 오른쪽 아래에 위치해야할 화살표 역시 위에 위치해 있다.<br />
+이전/다음 포스트 버튼은 글 어딘가 중간쯤에 있었다.</p>
+
+<p>뭔가 모바일용에서 정상 작동하지 않는 코드가 있나 햇는데, 안드로이드 폰에서는 정상으로 출력된다.
+구형 브라우저 및 최신 브라우저에서 모두.<br />
+아이폰에서는 사파리만 사용하고 있었는데, 브라우저 문제인가 확인해보기 위해 아이폰용 크롬, 파이어폭스, 오페라에서 확인해 보니 모두 같은 현상이다.</p>
+
+<p>이번엔 아이맥의 시뮬레이터에서도 실행을 해보니 정상 작동한다.<br />
+내 아이폰은 6s, iOS 10.3.3 이고, 시뮬의 iOS 버전은 11.2 이다.
+이 쯤 되면 iOS의 문제인 것 같긴한데, 뭣이 문제인지 알 수가 없었다.<br />
+검색을 해봐도 명확한 답변을 찾을 수 없었는데, 레이아웃을 이리저리 변경하고 테스트를 던 중<br />
+‘height: 100%’ 값을 삭제했더니 제대로 출력이 된다.
+😲 ?</p>
+
+<p>이번엔 검색어를 더 구체화해서 찾아보니 아래와 같은 글을 발견했다.</p>
+
+<p><a href="http://www.damirscorner.com/blog/posts/20180209-FlexboxRelativeHeightIssueInIos10.html">Flexbox Relative Height Issue in iOS 10</a></p>
+
+<p>결론은 역시 iOS 10에서의 이슈였으며 iOS 11에서는 수정되었다고 한다.
+이슈가 됐던 부분은, flex-direction이 column 일때, 부모 엘리먼트의 높이를 설정하지 않고 자식에서 높이를 % 로 지정하면 높이를 제대로 계산하지 못하는 문제이다.</p>
+
+<p>하지만 저 글에서는 부모 position을 absolute로하고, 자식은 relative로 해야한다고 했지만,
+난 단지 자식의 height을 삭제하는 것만으로도 해결이 됐다.</p>
+
+<h3 id="재현">재현</h3>
+<p>간단한 코드로 문제를 재현해보자면 아래와 같다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+  container
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inner-container"</span><span class="nt">&gt;</span>
+    inner-container
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"child-a"</span><span class="nt">&gt;</span>
+      child-a
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"child-b"</span><span class="nt">&gt;</span>
+      child-b
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>그리고 inner-container의 height을 100% 로 설정한다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="rouge-code"><pre><span class="nc">.container</span> <span class="p">{</span>
+      <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+      <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+      <span class="nl">background-color</span><span class="p">:</span> <span class="no">navajowhite</span><span class="p">;</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nc">.inner-container</span> <span class="p">{</span>
+      <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+      <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+      <span class="nl">background-color</span><span class="p">:</span> <span class="no">mediumslateblue</span><span class="p">;</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+      <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+      <span class="nl">margin</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nc">.child-a</span> <span class="p">{</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+      <span class="nl">background-color</span><span class="p">:</span> <span class="no">mediumseagreen</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nc">.child-b</span> <span class="p">{</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+      <span class="nl">background-color</span><span class="p">:</span> <span class="no">pink</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nc">.child-a</span><span class="o">,</span>
+    <span class="nc">.child-b</span> <span class="p">{</span>
+      <span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위 코드를 iOS 10.3.3 에서 실행하면 아래와 같은 모양으로 출력이된다.</p>
+
+<p class="center"><a href="/assets/images/ios_flex_with_height_percent.png"><img src="/assets/images/ios_flex_with_height_percent.png" alt="ios_flex_height_percent" width="300px" title="click to view" /></a></p>
+
+<p>inner-container가 제대로 출력되지 않는 것을 볼 수 있다.<br />
+여기서 inner-container의 height을 삭제하고 실행을 하면 아래와 같이 원하는 결과를 얻을 수 있다.</p>
+
+<p class="center"><a href="/assets/images/ios_flex_without_height.png"><img src="/assets/images/ios_flex_without_height.png" alt="ios_flex_without_height" width="300px" title="click to view" /></a></p>
+
+<p>inner-container의 높이가 자식의 높이만큼 자동으로 잘 적용이 되었다.</p>
+
+<h3 id="결론은">결론은</h3>
+
+<p>iOS 10(내 폰 10.3.3 에서만 테스트) 에서 flex-direction: column 을 사용할 시,</p>
+
+<ol>
+  <li>부모 엘리먼트의 높이를 설정한 경우
+    <ul>
+      <li>자식 엘리먼트의 높이에 %, 또는 px 모두 사용할 수 있음</li>
+    </ul>
+  </li>
+  <li>부모 엘리먼트의 높이를 설정하지 않았다면
+    <ul>
+      <li>자식 엘리먼트의 높이에 %를 사용할 수 없음</li>
+    </ul>
+  </li>
+</ol>
+
+      </div>
+
+
+      <div class="page-footer">
+        <div class="page-tag">
+          
+            <a class="violet-box no-anim tag" href="/tags#iOS flex">&#35; iOS flex</a>
+          
+            <a class="violet-box no-anim tag" href="/tags#iPhone flex">&#35; iPhone flex</a>
+          
+            <a class="violet-box no-anim tag" href="/tags#flex column">&#35; flex column</a>
+          
+        </div>
+      </div>
+
+        
+  
+  
+
+  
+    
+      
+    
+  
+    
+      
+        
+      
+        
+
+          
+            
+            
+            
+
+    
+  
+    
+      
+        
+      
+
+    
+  
+
+<div class="pagination-post">
+  
+  
+    <div class="previous gray-box page-trail">
+      <a class="link-bg-white no-scale" href="/GitHub-Pages/"><i class="fa fa-angle-left"></i>&nbsp;&nbsp;GitHub Pages 로 블로...</a>
+    </div>
+   
+  
+  
+</div>
+      
+<section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      /**
+      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+      var disqus_config = function () {
+        this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://sunyrora.github.io/iphone-flex/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//sunyrora.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+
+
+    </div> <!-- End Wrap Content -->
+
+  </article> <!-- End Article Page -->
+
+  <div class="btn-arrow-container">
+    <div id="btn-top">
+      <a class="btn-arrow" href=""><i class="fas fa-arrow-circle-up"></i></a>
+    </div>
+    <div id="btn-bottom">
+      <a class="btn-arrow" href=""><i class="fas fa-arrow-circle-down"></i></a>
+    </div>
+  </div>
+</div>
+  </div>
+</body>
+
+<script src="/assets/js/index.js"></script>
+</html>
