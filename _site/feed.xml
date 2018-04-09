@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://sunyrora.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sunyrora.github.io/" rel="alternate" type="text/html" /><updated>2018-04-09T13:17:17+02:00</updated><id>https://sunyrora.github.io/</id><title type="html">Sunyrora’s Blog</title><subtitle>Sunyrora's Blog.</subtitle><author><name>sunyrora</name></author><entry><title type="html">GitHub Pages 로 블로그를 시작해볼까?</title><link href="https://sunyrora.github.io/GitHub-Pages/" rel="alternate" type="text/html" title="GitHub Pages 로 블로그를 시작해볼까?" /><published>2018-04-03T14:05:43+02:00</published><updated>2018-04-03T14:05:43+02:00</updated><id>https://sunyrora.github.io/GitHub-Pages</id><content type="html" xml:base="https://sunyrora.github.io/GitHub-Pages/">&lt;p&gt;문득 공부하던 것을 블로그로 정리해 놓으면 좋겠다는 생각이 들었다.&lt;br /&gt;
+여러가지 공부한 것을 그대로 지나가 버리면 시간이 지나면 금방 잊어버리기도 하고, 나중에 찾아보면 좋을 것 같아서 시작해 보았다.&lt;/p&gt;
+
+&lt;p&gt;여러가지 서비스들이 있는데, GitHub Pages 로 선택했다.&lt;br /&gt;
+다른 것들을 써보고 선택한게 아니라 비교는 못하겠지만, 깃허브를 선택하게 된 요인은..&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Git으로 코드 관리를 함과 동시에 커밋(푸시)하면 자동으로 페이지가 생성.&lt;/strong&gt;&lt;br /&gt;
+  -&amp;gt; 결과적으로 이건 플러그인 때문에 조금 불편해졌다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;내가 원하는 기능을 내 맘대로 추가할 수 있다.&lt;/strong&gt;&lt;br /&gt;
+  -&amp;gt; 이건 배보다 배꼽이 더 커지는 결과를 초래했다.. 😭&lt;br /&gt;
+  글을 올리려고 시작했는데, 사이트 만드는데 너무 많은 시간을 투자해 버렸다.&lt;/p&gt;
+
+    &lt;p&gt;시작하기 전 나의 지식:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;지킬 지식 전무&lt;/li&gt;
+      &lt;li&gt;루비 지식 전무&lt;/li&gt;
+      &lt;li&gt;리퀴드도 역시&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;난 이걸 왜 시작한 것인가……&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;사실 처음 생각은 ‘맘에드는 테마를 가져와서 조금만 손보면 금방 하겠지’ 였다.&lt;br /&gt;
+실제로도 그냥 테마만 가져다 쓰면 뭐 뚝딱이긴 하다. 깃허브에서 기본 제공하는 테마도 있고.&lt;br /&gt;
+ㅎㅎㅎ 그러나 욕심은 끝도 없어져서 결국 처음 마음 속으로 정해 놓았던 시간을 초과하고도 아직도 손 봐야할 것이 남아 있다.&lt;br /&gt;
+하지만 그렇게 되면 정말 이걸 하는 목적이 글을 정리하려는 것인지 블로그를 만드는 것 자체인지 모르게 되어 버릴 것 같아 우선 이쯤해서 깃 허브에 올리고 차차 조금씩 수정해 가기로 했다.&lt;br /&gt;
+(그런데 올리면서도 생각지 못한 문제들이 발생하여 또 시간을 잡아 먹었지..)&lt;/p&gt;
+
+&lt;p&gt;처음 시작은 기본인
+&lt;a href=&quot;https://jekyllrb.com&quot;&gt;지킬 공식 홈&lt;/a&gt;과
+&lt;a href=&quot;https://help.github.com/categories/customizing-github-pages/&quot;&gt;GitHub Pages 문서&lt;/a&gt;를 시작으로 만들었다.&lt;br /&gt;
+루비 gem 버전 관련 삽질한 건 패스.&lt;/p&gt;
+
+&lt;p&gt;그리고 테마는 &lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;여기&lt;/a&gt;서 선택.&lt;br /&gt;
+너무나 많은 테마들이 있어서 테마 찾는데만도 시간이 너무 걸릴 것 같아 첫 몇 페이지에서 맘에 들면서 간단해 보이는걸로 선택했다.&lt;br /&gt;
+처음부터 너무 복잡하면 사전 지식이 없는 내가 익숙해 지기도 오래 걸릴 것 같아서.&lt;br /&gt;
+(그런데 다른 것보다 css에 투자한 시간이 한 80% 이상은 된 듯…)&lt;/p&gt;
+
+&lt;p&gt;블로그 기본 테마는 &lt;a href=&quot;http://jekyllthemes.org/themes/flexible-jekyll/&quot;&gt;이것&lt;/a&gt;으로 하여, 다른 것들도 참조해 가며 이것 저것 수정하고 삭제하고 덧 붙이고 했다.&lt;br /&gt;
+선택은 하긴했는데, 코드 리펙토링도 시간이 좀 걸렸다.&lt;/p&gt;
+
+&lt;p&gt;이걸 설치하며 습득한 지식과 문제점 및 해결한 과정을 모두 정리하기엔 또 너무 시간을 잡아먹을 것 같으니,
+우선 가장 최근에 경험한 문제에 대해 정리해보자.&lt;/p&gt;
+
+&lt;h2 id=&quot;github-에서-호스팅&quot;&gt;GitHub 에서 호스팅&lt;/h2&gt;
+
+&lt;p&gt;블로그 제작에만 너무 투자를 하지 말아야 겠다는 생각이 든 후 우선 진행 된 것부터 깃허브에 올리기로 결심,
+(딱 여기까지 쓰고도 스타일 수정한 건 안 비밀.. 😑 )&lt;br /&gt;
+로컬에서 빌드 잘 되고, 실행도 잘 되니 일단 올리고 어떻게 나오나 확인하자 하며 remote 저장소에 push를 했다.&lt;/p&gt;
+
+&lt;p&gt;그런데 여기서 1차 문제 발생. 
+블로그 페이지가 뜨지 않는다.&lt;/p&gt;
+
+&lt;p&gt;무엇이 문제일까 생각하며 git repository setting에 들어갔더니 GitHub Pages 부분에 에러 메시지가 떠있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Unable to build page. Please try again later.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;뭐 특별한 이유가 써 있는 것도 아니고 그냥 빌드할 수 없다니 뭘 어쩌라는 건가..
+그러다 갑자기 어딘가에서 본, 에러가 나면 메일로 내용이 날아온다는 것이 떠올랐다.&lt;br /&gt;
+바로 메일을 확인해보니 역시 깃허브로부터 한 통 날아와 있다.&lt;/p&gt;
+
+&lt;p&gt;그러나 역시 에러 메시지는 위와 같다.
+하지만 더 많은 정보를 보기 위한 링크도 같이 보내줬으니 어디 한 번 가보자. 에러가 발생했을 때 참고할 내용들이 정리되어 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;&amp;quot; https://help.github.com/articles/troubleshooting-jekyll-builds&amp;quot;&quot;&gt;Troubleshooting GitHub Pages builds&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;다행히 위 주소의 목록 중 Generic Jekyll build failures 에서 원인을 찾을 수 있었다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Unverified email address&lt;/p&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;To trigger a build, the user who pushes a commit to the Pages repository must have a verified email address.
+After you verify an email address, your GitHub Pages sites will build automatically.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;문제는 내 &lt;strong&gt;로컬 git config에 설정된 이메일과 github pages를 사용할 remote repository 계정의 이메일이 달라서 발생&lt;/strong&gt;한 것이었다.
+로컬에서 이런 저런 작업을 하며 환경 설정을 수정했었는데, 그걸 그대로 둔 것이었다.&lt;/p&gt;
+
+&lt;p&gt;원인을 찾았으니 로컬 환경설정 수정을 했다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; user.name &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;사용자이름]
+git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; user.email &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;이메일 주소]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;이렇게 수정하고 바로 push 시도를 하면 소스에 변경된 것이 없어서 업데이트하지 않는다. 그래서 그냥 아무거나 하나 수정하고 다시 커밋 후 푸시 했다.&lt;/p&gt;
+
+&lt;p&gt;그렇게 이젠 잘 될 거라 믿었는데,,,, 2차 문제 발생.
+이젠 아예 안 뜨는게 아니라 뜨다 만다. 정확히는 아래 이미지처럼 메뉴는 뜨고 글 리스트가 보이지 않는다.&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;a href=&quot;/assets/images/main_abnormal.png&quot;&gt;&lt;img src=&quot;/assets/images/main_abnormal.png&quot; alt=&quot;main_abnormal&quot; width=&quot;300px&quot; title=&quot;click to view&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;포스트가 없으면 리스트가 안 뜨는게 정상이겠지만 위에 보는 것과 같이 포스트의 갯수는 카운트가 되어있다.&lt;br /&gt;
+이건 깃혀브의 빌드 오류도 아니라 에러 메시지가 있는 것도 아니고 처음 문제보다 참 당황스럽고 멘붕이었지. 😨&lt;br /&gt;
+그러다가 하나의 페이지 주소를 직접 입력해서 접속해 보았다.&lt;br /&gt;
+어라 제대로 뜨네??&lt;br /&gt;
+그리고 이번엔 메인의 리스트와 같은 코드를 사용하는 태그 페이지를 주소창에 입력했더니 태그 리스트는 제대로 나온다.&lt;br /&gt;
+아 뭔가 조금씩 실마리가 보이는 것 같다..&lt;br /&gt;
+메인 페이지는 카테코리 레이아웃을 사용하는데, 카테고리 별로 페이지네이션을 하기 위해 jekyll-paginate-v2 를 사용했다.&lt;br /&gt;
+깃허브 페이지는 jekyll-paginate v1을 지원하고, v2는 지원하지 않는다.&lt;/p&gt;
+
+&lt;h2 id=&quot;github-pages-에서-jekyll-plugin-사용&quot;&gt;GitHub pages 에서 Jekyll plugin 사용&lt;/h2&gt;
+
+&lt;p&gt;그리하여 지원하지 않는 플러그인을 사용하는 법을 검색.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://help.github.com/articles/adding-jekyll-plugins-to-a-github-pages-site/&quot;&gt;Adding Jekyll plugins to a GitHub Pages site&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;위 링크에서&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;the only way to incorporate them in your site is to generate your site locally and then push your site’s static files to your GitHub Pages site.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;이 것을 보고 단순히 작업 소스와 같이 _site 폴더를 함께 올리면 되는 건줄 알았다 (원래 _site 는 gitignore에 넣어둠).&lt;br /&gt;
+후훗 그게 그냥 될리가 없지.&lt;br /&gt;
+얼마간의 삽질을 더 거친 후, 오로지 빌드된 _site의 내용들만 master 브랜치에 올려두어야 한다는 것을 알았다.&lt;/p&gt;
+
+&lt;p&gt;아 &lt;strong&gt;여기서 잠시 집고 넘어 갈 것&lt;/strong&gt;은, 깃허브 페이지의 종류가 두 가지가 있다는 것.
+처음에 제대로 이해하지 못해서 삽질의 시간이 길어졌다. 😑&lt;br /&gt;
+repository의 이름을 &lt;strong&gt;[user name].github.io&lt;/strong&gt; 로 하면 자동으로 해당 사용자 깃허브 페이지를 생성하며, 오로지 마스터 브랜치만을 깃허브 호스트로 사용할 수 있다.&lt;br /&gt;
+그리고 사이트의 주소는 그대로 &lt;strong&gt;http(s)://[user name].github.io&lt;/strong&gt; 가 된다.
+여기서 ‘user name’은 깃허브 아이디가 되겠다.&lt;/p&gt;
+
+&lt;p&gt;두번째는, 프로젝트 페이지 사이트(Project Pages sites) 라고 깃허브에서 설명하고 있는 것으로,&lt;br /&gt;
+모든 깃허브 repository의 settings에서 각각 깃허브 페이지 활성화 설정을 할 수 있고, 호스트에 사용될 브랜치 선택도 할 수 있다.&lt;br /&gt;
+주소는 &lt;strong&gt;http(s)://[user name].github.io/[repository name]&lt;/strong&gt;&lt;br /&gt;
+여기서 ‘user name’ 도 깃허브 아이디이다.&lt;/p&gt;
+
+&lt;p&gt;자세한 내용은 &lt;a href=&quot;https://help.github.com/articles/user-organization-and-project-pages/#project-pages&quot;&gt;깃허브 헬프&lt;/a&gt; 에서 확인.&lt;/p&gt;
+
+&lt;p&gt;이 걸 몰라서 지킬 플러그인 적용 방법을 검색하며 엄청 햇갈렸었다.&lt;br /&gt;
+난 이미 repository를 내 깃허브 아이디를 사용하여 sunyrora.github.io 로 생성해 놓고 작업을 한 상태였는데,
+master말고 다른 브랜치를 호스트로 설정하라는 말을 보며, ‘난 마스터 밖에 설정 못하는데??’ 하면서 이해를 할래야 할 수가 없었던 거지. 
+어찌어찌 두 종류의 페이지가 있다는 것을 알았고, 이젠 나처럼 첫 번째 종류의 페이지로 생성을 한 경우 _site 빌드 파일을 어떻게 올리느냐가 남았다.&lt;/p&gt;
+
+&lt;p&gt;어떤 사람은 repository를 두 개를 만들어서 하나는 소스관리용으로, 하나는 페이지 호스트용으로 쓴다는데,&lt;br /&gt;
+그러면 관리가 좀 번거로워 질 것 같고, 나는 맘에 안든다.&lt;br /&gt;
+그러다가 하나의 repository에서 브랜치를 이용하여 관리하는 방법을 이해하기 쉽게 설명해 놓은 &lt;a href=&quot;https://drewsilcock.co.uk/custom-jekyll-plugins&quot;&gt;블로그&lt;/a&gt;를 발견했다.&lt;/p&gt;
+
+&lt;p&gt;방법을 요약해 보면,&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;로컬에 마스터 말고 다른 브랜치를 생성하여 소스 관리용으로 사용한다(remote의 branch 에 연결).&lt;/li&gt;
+  &lt;li&gt;remote 의 master에는 로컬에서 빌드 된 _site의 결과물만을 올린다.&lt;/li&gt;
+  &lt;li&gt;여기엔 .nojekyll 이라는 이름의 빈 파일을 함께 올린다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;요약만 하면 이게 다다.&lt;br /&gt;
+이걸 이해하기 위해 그 많은 삽질을 해야 했을 뿐이지.&lt;br /&gt;
+아마도 누가 이렇게 딱 세 줄로 적어 놓은 걸 봤다해도 처음엔 이해하지 못했겠지?&lt;/p&gt;
+
+&lt;h3 id=&quot;자-그럼-_site의-결과물을-remote-master에-어떻게-올릴-것인가&quot;&gt;자 그럼 _site의 결과물을 remote master에 어떻게 올릴 것인가.&lt;/h3&gt;
+
+&lt;p&gt;위에 링크한 블로그에서 설명한 방법은 _site 폴더에 따로 git init 으로 repository를 생성하여 remote master에 연결해 push 하는 방법이다. 그리고 소스는 별도의 브랜치로 관리한다.&lt;br /&gt;
+처음엔 그 방법 그대로 적용해 보았다. 아주 잘 작동되고, remote ropository도 한 프로젝트로 관리할 수 있으니 괜찮은 방법이다.&lt;br /&gt;
+그런데 한 가지 문제점은 로컬에는 git repository가 두 개로 분리 되어 있는 상홍이기 때문에 두 개의 프로젝트를 관리하는 것과 큰 차이점이 없다는 것이었다. 커밋을 각각의 폴더에서 따로 매 번 해줘야 하는 것이다.&lt;br /&gt;
+쓸만하지만 역시 맘에 드는 방법은 아니다.&lt;/p&gt;
+
+&lt;p&gt;이번엔 원리를 이해했으니 로컬에서도 한 개의 repository로 브랜치를 사용하여 소스관리와 빌드 파일 배포를 한 번에 할 수 있는 방법을 생각해볼 수 있었다.&lt;/p&gt;
+
+&lt;p&gt;git 명령어 중 소스의 특정 폴더를 프로젝트의 root로 만들 수 있는 명령이 있다는 것을 찾을 수 있었다.
+바로 &lt;strong&gt;filter-branch&lt;/strong&gt; 다. 이 명령어의 &lt;strong&gt;–subdirectory-filter&lt;/strong&gt; 옵션을 사용하면 지정한 브랜치의 서브폴더가 루트로 변경된다.&lt;/p&gt;
+
+&lt;p&gt;사실 이 명령어에 대해 검색하고, git &lt;a href=&quot;https://git-scm.com/book/ko/v1/Git-%EB%8F%84%EA%B5%AC-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%8B%A8%EC%9E%A5%ED%95%98%EA%B8%B0&quot;&gt;한글 설명&lt;/a&gt;(페이지의 거의 마지막)과 &lt;a href=&quot;https://git-scm.com/docs/git-filter-branch&quot;&gt;영어 설명&lt;/a&gt;을 봐도 그 많은 것들을 다 이해할 수는 없었다. 😰&lt;/p&gt;
+
+&lt;p&gt;이 &lt;a href=&quot;https://manishearth.github.io/blog/2017/03/05/understanding-git-filter-branch/&quot;&gt;블로그&lt;/a&gt;를 발견했는데, 아직 다 읽지도, 이해하지도 않았지만 잘 정리되어 있는 것 같다.
+어쨌든 현재 필요한 기능은 이것 저것 테스트 해보면 어찌 작동하는지 알게 됐다. (작업하던 소스 히스토리가 하나도 남지 않게 됐다….)&lt;/p&gt;
+
+&lt;p&gt;그럼 과정을 하나 하나 정리해 보자.&lt;br /&gt;
+결과적으로 하는 일은 위에 언급한 세 가지로 같으니 하는 방법은 여러가지가 있겠지만, 내가 한 과정은 이렇다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;로컬에 소스관리를 할 branch를 하나 만들고 checkout. (master 브랜치에서 작업하던 중인 것으로 가정)
+ 위의 링크에는 source 라는 브랜치를 만들었는데, 난 gh-pages로 했다. 처음 깃허브 설명서를 보며 만든 브랜치라 그냥 두기로 했다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;생성한 branch를 remote에 push.(깃허브 repository가 remote로 추가 되지 않았다면 먼저 추가)
+ 깃허브에 현재 push 한 branch가 생성된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;깃허브의 프로젝트 세팅의 branches 메뉴에 들어가서 default branch를 방금 생성된 branch로 변경
+(이제 master branch를 삭제할 수 있다. - 빌드된 _site 의 내용을 올려야 하기 때문에 기존 있는 내용은 삭제해야 한다.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그리고 로컬과 remote의 master branch 모두 삭제. (로컬에선 방금 생성한 branch 에 checkout 한 상태여야 한다.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이젠 로컬과 remote에 새로 생성한 branch(나의 경우 gh-pages)만 남아있는 상태이다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;로컬 gh-pages 에서 지킬 빌드.
+    &lt;ul&gt;
+      &lt;li&gt;이미 빌드가 된 상태로 _site의 모든 내용도 커밋이 된 상태라면 넘어가도 된다.&lt;/li&gt;
+      &lt;li&gt;빌드하여 새로 생성된 파일들을 커밋한다.
+ (커밋할 때 .gitignore 에 _site가 추가되어 있으면 안된다.)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;로컬에서 master branch를 새로 생성하고 checkout.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이제 여기서 filter-branch로 빌드된 _site 폴더를 루트로 만든다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;master branch의 내용은 빌드된 _site 폴더의 내용이 되고, gh-pagse에는 모든 소스가 남아있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;remote 에 push all 하면 끝이다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;장황하게 길게 써진 것 같은데, 모르는 상태에서는 설명이 없이 이해하기 힘들었기 때문에 각 과정을 이해한 대로 정리해 보았다.&lt;br /&gt;
+언제나 그렇듯 알고나면 별거 없는..&lt;/p&gt;
+
+&lt;p&gt;그럼 이제 긴 설명만 할 것이 아니라 실제 작업을 보자.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# local branch 생성 후 체크아웃&lt;/span&gt;
+git checkout &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; gh-pages
+
+&lt;span class=&quot;c&quot;&gt;# push to remote&lt;/span&gt;
+git push origin gh-pages&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;그 다음 github site에서 default branch 변경한 후&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# remote master branch 삭제&lt;/span&gt;
+git push origin :master
+
+&lt;span class=&quot;c&quot;&gt;# 로컬 master branch 삭제&lt;/span&gt;
+git branch &lt;span class=&quot;nt&quot;&gt;-D&lt;/span&gt; master&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;로컬에서 jekyll 빌드 후 커밋&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# 로컬 master branch 생성 후 체크아웃&lt;/span&gt;
+git checkout &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; master
+
+&lt;span class=&quot;c&quot;&gt;# _site 폴더를 루트로 만들기&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# @ 또는 HEAD는 현재 브렌치의 HEAD를 의미&lt;/span&gt;
+git filter-branch &lt;span class=&quot;nt&quot;&gt;--subdirectory-filter&lt;/span&gt; _site &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; @
+
+&lt;span class=&quot;c&quot;&gt;# remote push all&lt;/span&gt;
+git push &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;아 한 가지 빠트린 부분은 .nojekyll을 _site 폴더에 함께 빌드하기 위해 _config.yml 에&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;na&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.nojekyll&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이렇게 추가해 주었다.(이 방법이 맞는건진 모르겠다.)&lt;/p&gt;
+
+&lt;p&gt;이제 깃허브 페이지 주소로 가서 확인해 보니&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;a href=&quot;/assets/images/main_normal.png&quot;&gt;&lt;img src=&quot;/assets/images/main_normal.png&quot; alt=&quot;sunyrora blog&quot; width=&quot;300px&quot; title=&quot;click to view&quot; class=&quot;center-img&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;정상적으로 잘 동작한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;주의사항&quot;&gt;주의사항&lt;/h3&gt;
+
+&lt;p&gt;이 방법으로 하면 하나의 커밋으로 소스관리와 빌드 관리를 할 수 있는 장점이 있다.&lt;br /&gt;
+그러나 소스 변경할 땐 반드시 gh-pages(혹은 생성한 branch 명) branch로 checkout 상태여야 하고,
+매번 빌드한 후 remote에 적용할 때마다 로컬의 마스터 삭제와 서브디렉토리 필터 과정을 거쳐야 하는 단점이 있다.
+그러나 이건 명령어를 쉘로 만들어 두면 귀찮은 과정이 조금은 줄어 들겠지.&lt;/p&gt;
+
+&lt;h2 id=&quot;마치며&quot;&gt;마치며&lt;/h2&gt;
+
+&lt;p&gt;쉽게 생각하고 시작한게 은근 고생할 줄이야..&lt;br /&gt;
+이 글 하나 작성하는데도 적지 않은 시간이 걸렸다.&lt;br /&gt;
+작성하는 중간에도 수정 사항이 보여서 수정하고, 문제 해결도 하고, 한 번 더 확인하고…&lt;br /&gt;
+그래도 아직도 추가해야할 것도 손봐야 할 것도 많다.ㅜㅜ&lt;/p&gt;
+
+&lt;p&gt;원래 목적을 잃지 않게 균형 잘 잡아야겠다………&lt;/p&gt;</content><author><name>sunyrora</name></author><category term="[&quot;Blog&quot;, &quot;Tech&quot;]" /><category term="github pages" /><category term="jekyll" /><category term="plugin" /><category term="blog" /><summary type="html">문득 공부하던 것을 블로그로 정리해 놓으면 좋겠다는 생각이 들었다. 여러가지 공부한 것을 그대로 지나가 버리면 시간이 지나면 금방 잊어버리기도 하고, 나중에 찾아보면 좋을 것 같아서 시작해 보았다.</summary></entry><entry><title type="html">LongTitle-Test-대한민국의 영토는 한반도와 그 부속도서로 한다. 대통령은 국민의 보통·평등·직접</title><link href="https://sunyrora.github.io/Long-Title-Test/" rel="alternate" type="text/html" title="LongTitle-Test-대한민국의 영토는 한반도와 그 부속도서로 한다. 대통령은 국민의 보통·평등·직접" /><published>2018-03-28T15:12:13+02:00</published><updated>2018-03-28T15:12:13+02:00</updated><id>https://sunyrora.github.io/Long-Title-Test</id><content type="html" xml:base="https://sunyrora.github.io/Long-Title-Test/">&lt;p&gt;대한민국의 영토는 한반도와 그 부속도서로 한다. 대통령은 국민의 보통·평등·직접·비밀선거에 의하여 선출한다. 대통령은 내란 또는 외환의 죄를 범한 경우를 제외하고는 재직중 형사상의 소추를 받지 아니한다.&lt;/p&gt;
+
+&lt;p&gt;국무위원은 국무총리의 제청으로 대통령이 임명한다. 헌법재판소에서 법률의 위헌결정, 탄핵의 결정, 정당해산의 결정 또는 헌법소원에 관한 인용결정을 할 때에는 재판관 6인 이상의 찬성이 있어야 한다.&lt;/p&gt;
+
+&lt;p&gt;감사위원은 원장의 제청으로 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다. 사면·감형 및 복권에 관한 사항은 법률로 정한다.&lt;/p&gt;
+
+&lt;p&gt;근로자는 근로조건의 향상을 위하여 자주적인 단결권·단체교섭권 및 단체행동권을 가진다. 국교는 인정되지 아니하며, 종교와 정치는 분리된다. 국회는 법률에 저촉되지 아니하는 범위안에서 의사와 내부규율에 관한 규칙을 제정할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;모든 국민은 인간다운 생활을 할 권리를 가진다. 국회의 정기회는 법률이 정하는 바에 의하여 매년 1회 집회되며, 국회의 임시회는 대통령 또는 국회재적의원 4분의 1 이상의 요구에 의하여 집회된다.&lt;/p&gt;
+
+&lt;p&gt;비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병·초소·유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다. 다만, 사형을 선고한 경우에는 그러하지 아니하다.&lt;/p&gt;
+
+&lt;p&gt;국무총리 또는 행정각부의 장은 소관사무에 관하여 법률이나 대통령령의 위임 또는 직권으로 총리령 또는 부령을 발할 수 있다. 명령·규칙 또는 처분이 헌법이나 법률에 위반되는 여부가 재판의 전제가 된 경우에는 대법원은 이를 최종적으로 심사할 권한을 가진다.&lt;/p&gt;
+
+&lt;p&gt;국가안전보장회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 모든 국민은 그 보호하는 자녀에게 적어도 초등교육과 법률이 정하는 교육을 받게 할 의무를 진다.&lt;/p&gt;
+
+&lt;p&gt;정부는 예산에 변경을 가할 필요가 있을 때에는 추가경정예산안을 편성하여 국회에 제출할 수 있다. 헌법재판소의 장은 국회의 동의를 얻어 재판관중에서 대통령이 임명한다.&lt;/p&gt;
+
+&lt;p&gt;국가는 재해를 예방하고 그 위험으로부터 국민을 보호하기 위하여 노력하여야 한다. 국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다.&lt;/p&gt;</content><author><name>sunyrora</name></author><category term="[&quot;Tech&quot;]" /><category term="long" /><category term="title" /><category term="jekyll" /><summary type="html">대한민국의 영토는 한반도와 그 부속도서로 한다. 대통령은 국민의 보통·평등·직접·비밀선거에 의하여 선출한다. 대통령은 내란 또는 외환의 죄를 범한 경우를 제외하고는 재직중 형사상의 소추를 받지 아니한다.</summary></entry><entry><title type="html">Second post</title><link href="https://sunyrora.github.io/second-post/" rel="alternate" type="text/html" title="Second post" /><published>2018-03-28T01:16:30+02:00</published><updated>2018-03-28T01:16:30+02:00</updated><id>https://sunyrora.github.io/second-post</id><content type="html" xml:base="https://sunyrora.github.io/second-post/">&lt;p&gt;Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là, mais la majeure partie d’entre elles a été altérée par l’addition d’humour ou de mots aléatoires qui ne ressemblent pas une seconde à du texte standard. Si vous voulez utiliser un passage du Lorem Ipsum, vous devez être sûr qu’il n’y a rien d’embarrassant caché dans le texte. Tous les générateurs de Lorem Ipsum sur Internet tendent à reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul vrai générateur de Lorem Ipsum. Iil utilise un dictionnaire de plus de 200 mots latins, en combinaison de plusieurs structures de phrases, pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient des mots farfelus, ou des touches d’humour.&lt;/p&gt;</content><author><name>sunyrora</name></author><category term="[&quot;Blog&quot;]" /><category term="blog" /><category term="deux" /><summary type="html">Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là, mais la majeure partie d’entre elles a été altérée par l’addition d’humour ou de mots aléatoires qui ne ressemblent pas une seconde à du texte standard. Si vous voulez utiliser un passage du Lorem Ipsum, vous devez être sûr qu’il n’y a rien d’embarrassant caché dans le texte. Tous les générateurs de Lorem Ipsum sur Internet tendent à reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul vrai générateur de Lorem Ipsum. Iil utilise un dictionnaire de plus de 200 mots latins, en combinaison de plusieurs structures de phrases, pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient des mots farfelus, ou des touches d’humour.</summary></entry><entry><title type="html">First post</title><link href="https://sunyrora.github.io/first-post/" rel="alternate" type="text/html" title="First post" /><published>2018-03-27T22:50:47+02:00</published><updated>2018-03-27T22:50:47+02:00</updated><id>https://sunyrora.github.io/first-post</id><content type="html" xml:base="https://sunyrora.github.io/first-post/">&lt;p&gt;On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L’avantage du Lorem Ipsum sur un texte générique comme ‘Du texte. Du texte. Du texte.’ est qu’il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour ‘Lorem Ipsum’ vous conduira vers de nombreux sites qui n’en sont encore qu’à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d’y rajouter de petits clins d’oeil, voire des phrases embarassantes).&lt;/p&gt;</content><author><name>sunyrora</name></author><category term="[&quot;Blog&quot;]" /><category term="blog" /><summary type="html">On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L’avantage du Lorem Ipsum sur un texte générique comme ‘Du texte. Du texte. Du texte.’ est qu’il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour ‘Lorem Ipsum’ vous conduira vers de nombreux sites qui n’en sont encore qu’à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d’y rajouter de petits clins d’oeil, voire des phrases embarassantes).</summary></entry><entry><title type="html">branch test</title><link href="https://sunyrora.github.io/toujours-test/" rel="alternate" type="text/html" title="branch test" /><published>2018-03-04T13:20:13+01:00</published><updated>2018-03-04T13:20:13+01:00</updated><id>https://sunyrora.github.io/toujours-test</id><content type="html" xml:base="https://sunyrora.github.io/toujours-test/">&lt;p&gt;릴케 된 못 하나에 다 둘 있습니다. 많은 헤일 아스라히 책상을 나는 오면 이름과, 벌레는 나의 봅니다. 딴은 소녀들의 하나에 별 가난한 무성할 사랑과 묻힌 지나가는 계십니다. 무성할 나는 릴케 거외다. 그러나 아직 나는 이제 듯합니다. 북간도에 별이 다 나는 하나의 강아지, 너무나 이름과, 별들을 까닭입니다. 지나고 프랑시스 라이너 별 나는 불러 버리었습니다. 패, 보고, 쓸쓸함과 흙으로 같이 있습니다. 추억과 내린 어머니 묻힌 둘 하나 계집애들의 쉬이 별 버리었습니다. 이름과 경, 이름과, 이 같이 까닭이요, 딴은 이제 있습니다.&lt;/p&gt;
+
+&lt;p&gt;쉬이 별에도 별빛이 차 릴케 하나에 별 계십니다. 둘 나는 불러 이런 가을로 까닭입니다. 별 써 슬퍼하는 이름자를 무엇인지 책상을 나의 했던 같이 버리었습니다. 어머니, 묻힌 불러 시인의 애기 봅니다. 풀이 그러나 그리워 이름과, 까닭이요, 아스라히 말 있습니다. 둘 어머니, 하나 못 속의 무성할 차 겨울이 있습니다. 슬퍼하는 멀듯이, 아직 그리고 풀이 차 듯합니다. 이름과, 위에도 별 별 까닭입니다. 별 하나에 어머니, 마디씩 비둘기, 그러나 그리고 계십니다. 무성할 부끄러운 쓸쓸함과 내 남은 불러 봅니다. 프랑시스 다 같이 북간도에 이 오는 가득 듯합니다.&lt;/p&gt;
+
+&lt;p&gt;나는 새겨지는 파란 무덤 프랑시스 부끄러운 가슴속에 봅니다. 별 때 묻힌 별에도 옥 겨울이 나는 까닭입니다. 어머님, 차 청춘이 잠, 많은 하나에 어머니, 하나 봅니다. 별 노새, 별들을 까닭입니다. 헤일 아직 이름과, 사랑과 어머님, 봅니다. 북간도에 다하지 아름다운 경, 시인의 않은 까닭입니다. 마리아 벌레는 쓸쓸함과 이웃 까닭입니다. 가슴속에 잔디가 오면 까닭입니다. 별빛이 자랑처럼 내일 까닭이요, 풀이 옥 하나에 라이너 노루, 거외다.&lt;/p&gt;
+
+&lt;p&gt;피어나듯이 새겨지는 별들을 있습니다. 어머니 책상을 나는 토끼, 하나 아름다운 하늘에는 오는 있습니다. 같이 오면 노새, 이런 까닭입니다. 이름과, 이름과, 별에도 없이 쓸쓸함과 듯합니다. 프랑시스 우는 않은 다 별 까닭입니다. 남은 지나고 별 것은 계십니다. 피어나듯이 릴케 나의 별 보고, 하나에 버리었습니다. 이름과, 까닭이요, 무엇인지 언덕 벌레는 이름과, 사랑과 멀듯이, 까닭입니다. 하늘에는 가난한 노루, 어머님, 새워 헤는 하나에 이네들은 그리고 까닭입니다. 어머님, 때 부끄러운 써 너무나 듯합니다.&lt;/p&gt;
+
+&lt;p&gt;별 오면 프랑시스 북간도에 아름다운 무성할 별 듯합니다. 못 이런 나의 다 까닭입니다. 프랑시스 별들을 남은 때 아름다운 잠, 릴케 내린 경, 듯합니다. 이국 가슴속에 하나에 남은 멀듯이, 라이너 봅니다. 하나에 멀리 언덕 마리아 쓸쓸함과 있습니다. 별이 한 사랑과 소학교 묻힌 된 이름을 우는 별 봅니다. 경, 가득 남은 까닭입니다. 다 비둘기, 벌레는 있습니다. 내일 이름자 이름과, 별들을 별에도 오면 잔디가 하나에 봅니다.&lt;/p&gt;</content><author><name>sunyrora</name></author><category term="[&quot;Tech&quot;]" /><category term="jekyll" /><category term="plugin" /><summary type="html">릴케 된 못 하나에 다 둘 있습니다. 많은 헤일 아스라히 책상을 나는 오면 이름과, 벌레는 나의 봅니다. 딴은 소녀들의 하나에 별 가난한 무성할 사랑과 묻힌 지나가는 계십니다. 무성할 나는 릴케 거외다. 그러나 아직 나는 이제 듯합니다. 북간도에 별이 다 나는 하나의 강아지, 너무나 이름과, 별들을 까닭입니다. 지나고 프랑시스 라이너 별 나는 불러 버리었습니다. 패, 보고, 쓸쓸함과 흙으로 같이 있습니다. 추억과 내린 어머니 묻힌 둘 하나 계집애들의 쉬이 별 버리었습니다. 이름과 경, 이름과, 이 같이 까닭이요, 딴은 이제 있습니다.</summary></entry></feed>
