@@ -23,7 +23,7 @@
 
   <div class="item-list-tag">
     {% for tag in post.tags %}
-      <a class="violet-box no-anim tag" href="/tags#{{ tag | prepend: site.baseurl | replace: "//", "/" }}">&#35; {{ tag }}</a>
+      <a class="tag-box no-anim tag" href="/tags#{{ tag | prepend: site.baseurl | replace: "//", "/" }}">&#35; {{ tag }}</a>
     {% endfor %}
   </div>
   

@@ -1,8 +1,8 @@
-.violet-box {
+.tag-box {
   @include border-radius(3px);
   text-decoration: none;
-  background-color: $violet-box-bg-color;
-  border: 1px solid $violet-box-border-color;
+  background-color: $tag-box-bg-color;
+  border: 1px solid $tag-box-border-color;
   padding: 5px 5px;
   color: $dark-blue;
   @include transition(background-color .3s);
@@ -23,8 +23,8 @@
   // border: 1px solid orange;
   padding: 5px;
   margin: 0;
-  color: $white;
-  text-shadow: 5px 5px 3px $dark;
+  color: $tag-page-title-color;
+  // text-shadow: 5px 5px 3px $dark;
 }
 
 // .all-tags {

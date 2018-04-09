@@ -5,23 +5,19 @@ $gray: #ecf0f1;
 $dark-gray: #a0a0a0;
 $dark-blue: #263959;
 $dark: #333030;
-$bg-color1: #fbfbfb;
 
-$bg-color: #5c4d78;
+$bg-color: #f2f2f8;
+$bg-font-color: $dark;
+$title-color: #1d3052;
 
 $hover-color: orange;
+$link-bg-white-color: $title-color;
+$link-color: $title-color;
 
-$title-color1: #263959;
-
-$link-bg-white-color: #5c2d5b;
-$link-color: #c4bbda;
-$bg-font-color: white;
-$title-color: #5c2d5b;
-
-$tag-hover-color: #cfc2de;
-
-$violet-box-bg-color: #fbf9ff;
-$violet-box-border-color: #e8dfff;
+$tag-page-title-color: $dark;
+$tag-hover-color: $gray;
+$tag-box-bg-color: $lightgray;
+$tag-box-border-color: $gray;
 
 
 $blockquote-bg-color1: #f7fafc;

@@ -2,22 +2,14 @@
   @include flexbox;
   @include flex-direction(column);
   width: 100%;
+  max-width: $max-container-width;
   background-color: $white;
   @include border-radius(10px);
   margin-top: 5px;
 
-  .wrap-content,
-  .post-header {
-    @include border-radius(8px);
-  }
-
-  // a {
-  //   @extend a.link-bg-white;
-
-  //   display: inline;
-  //   text-decoration: underline;
-  //   font-weight: 550;
-  //   font-style: oblique;
+  // .wrap-content,
+  // .post-header {
+  //   @include border-radius(8px);
   // }
 }
 
@@ -25,6 +17,7 @@
   @include flexbox;
   @include flex-direction(column);
   @include align-items(center);
+  @include border-radius(8px);
   padding: 20px;
 }
 
@@ -34,6 +27,7 @@
   background-color: $white;
   padding: 5px;
   border-bottom: 1px solid $dark-gray;
+  @include border-radius(8px 8px 0 0);
 }
 
 
@@ -75,8 +69,8 @@
 
     display: inline;
     text-decoration: underline;
-    font-weight: 550;
-    font-style: oblique;
+    // font-weight: 550;
+    // font-style: oblique;
   }
 }
 
@@ -182,9 +176,14 @@ blockquote {
   .wrap-content {
     padding: 2px;
   }
+  
+  .header-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
   .content-body {
     width: 98%;
-    padding: 5px;
+    padding: 10px;
   }
 }
