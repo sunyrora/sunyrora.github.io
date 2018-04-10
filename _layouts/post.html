@@ -59,3 +59,15 @@ layout: main
     </div> <!-- End Wrap Content -->
 
   </article> <!-- End Article Page -->
+
+
+{% 
+  include structuredData.html 
+  headline=page.title
+  genre=page.category
+  keywords=page.tags
+  content=page.content
+  link=page.permalink
+  date=page.date
+  description=page.description
+%}
